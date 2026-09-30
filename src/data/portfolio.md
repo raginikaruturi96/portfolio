@@ -109,6 +109,15 @@ education:
     school: Shri Vishnu Engineering College for Women
     score: "CGPA: 8.89"
     period: 2022 – 2026
+    description:
+      - "Gained academic knowledge in Software Engineering, **Data Structures & Algorithms**, Database Management Systems (DBMS), **Operating Systems**, Object-Oriented Programming, Computer Networks, and Artificial Intelligence & Machine Learning"
+      - "Attended a 3-week offline bootcamp at IIIT Hyderabad (2023) focusing on **Learn to learn** and programming fundamentals."
+      - "Participated in **Google Immersion Week** 2023, an intensive program covering personal branding, technical interviewing, design thinking, and inclusive leadership."
+      - "Competed in Technova 2024, a national-level hackathon, and a college-level GDG hackathon"
+      - "Attended a 3-week offline bootcamp at the **TalentSprint**, Hyderabad (2024) learned various web frameworks and programming languages."
+      - "Served as **ISTE Coordinator**, leading 20+ college events and strengthening leadership and teamwork skills."
+      - "Balanced a software engineering internship with academic coursework during the 4th year, effectively managing both academic and professional responsibilities."
+      #   - "Actively engaged in extracurriculars such as flashmobs and stage performances."
 
 achievements:
   - title: Google WE Scholar

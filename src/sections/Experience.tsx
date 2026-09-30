@@ -16,7 +16,7 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2>Professional Experience</h2>
+          <h2>Work Experience</h2>
           <p className="section-subtitle">My journey in the tech industry</p>
         </motion.div>
 

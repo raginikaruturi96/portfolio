@@ -16,7 +16,7 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2>Featured Projects</h2>
+          <h2>Projects</h2>
           <p className="section-subtitle">Showcasing my best work</p>
         </motion.div>
 
