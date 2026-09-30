@@ -132,7 +132,7 @@
 .experience-description {
   list-style: none;
   padding: 0;
-  margin: 0 0 1.15rem;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -152,6 +152,56 @@
   left: 0;
   color: var(--accent);
   font-weight: bold;
+}
+
+.role-timeline {
+  position: relative;
+  margin: 0 0 1.15rem;
+  padding-left: 1.1rem;
+  border-left: 2px solid rgba(99, 102, 241, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.role-item {
+  position: relative;
+}
+
+.role-item::before {
+  content: '';
+  position: absolute;
+  left: -1.42rem;
+  top: 0.35rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 3px var(--dark-secondary);
+}
+
+.role-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+
+.role-top h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.role-period {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  white-space: nowrap;
 }
 
 .tech-stack {

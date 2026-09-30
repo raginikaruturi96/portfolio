@@ -21,13 +21,17 @@ export interface Hero {
 
 export interface Stat { label: string; value: string }
 
-export interface Experience {
+export interface ExperienceRole {
   title: string
-  company: string
-  location: string
   period: string
   current?: boolean
   description: string[]
+}
+
+export interface Experience {
+  company: string
+  location: string
+  roles: ExperienceRole[]
   technologies: string[]
 }
 
