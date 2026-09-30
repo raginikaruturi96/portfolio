@@ -10,7 +10,8 @@ interface TerminalLine {
 
 function buildCommands(): Record<string, () => string | string[]> {
   const { name, hero, experience, projects, skills, education, achievements, contact } = portfolio
-  const currentJob = experience.find(e => e.current) ?? experience[0]
+  const currentCompany = experience.find(e => e.roles.some(r => r.current)) ?? experience[0]
+  const currentRole = currentCompany.roles.find(r => r.current) ?? currentCompany.roles[0]
 
   const skillsBlock: string[] = ['⚡ Tech Stack', '']
   for (const cat of skills.categories) {
@@ -19,7 +20,9 @@ function buildCommands(): Record<string, () => string | string[]> {
 
   const experienceBlock: string[] = ['📋 Work Experience', '']
   experience.forEach((exp, i) => {
-    experienceBlock.push(`${i + 1}. ${exp.title} @ ${exp.company}           ${exp.period}`)
+    exp.roles.forEach(role => {
+      experienceBlock.push(`${role.title} @ ${exp.company}           ${role.period}`)
+    })
     experienceBlock.push(`   ${exp.technologies.join(' · ')}`)
     if (i < experience.length - 1) experienceBlock.push('')
   })
@@ -71,13 +74,13 @@ function buildCommands(): Record<string, () => string | string[]> {
       '└───────────────────────────────────────────────────┘',
     ],
     name: () => name,
-    position: () => currentJob.title,
-    'current position': () => currentJob.title,
-    role: () => currentJob.title,
-    company: () => currentJob.company,
-    employer: () => currentJob.company,
-    'current company': () => currentJob.company,
-    'current employer': () => currentJob.company,
+    position: () => currentRole.title,
+    'current position': () => currentRole.title,
+    role: () => currentRole.title,
+    company: () => currentCompany.company,
+    employer: () => currentCompany.company,
+    'current company': () => currentCompany.company,
+    'current employer': () => currentCompany.company,
     experience: () => experienceBlock,
     projects: () => projectsBlock,
     skills: () => skillsBlock,
@@ -89,7 +92,7 @@ function buildCommands(): Record<string, () => string | string[]> {
     whoami: () => 'ragini@portfolio',
     about: () => [
       `${name} — ${portfolio.tagline}.`,
-      `Currently at ${currentJob.company}.`,
+      `Currently at ${currentCompany.company}.`,
       hero.bio,
     ],
   }

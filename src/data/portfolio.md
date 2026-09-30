@@ -34,38 +34,36 @@ stats:
   - { label: "GDG DSA Co-Lead",    value: "🚀" }
 
 experience:
-  - title: Junior Software Engineer
-    company: Dhan AI
+  - company: Dhan AI
     location: Remote, India
-    period: Aug 2026 - Present
-    current: true
-    description:
-      - Developing backend services and APIs using TypeScript.
-      - Implementing business logic and external system integrations.
-      - Working with REST APIs, database operations, and caching solutions.
-      - Collaborating with cross-functional teams to deliver high-quality solutions.
-    technologies: [TypeScript, Node.js, GraphQL, REST APIs, MongoDB, Dynamic 365]
+    roles:
+      - title: Junior Software Engineer
+        period: Aug 2026 - Present
+        current: true
+        description:
+          - Developing backend services and APIs using TypeScript.
+          - Implementing business logic and external system integrations.
+          - Working with REST APIs, database operations, and caching solutions.
+          - Collaborating with cross-functional teams to deliver high-quality solutions.
+      - title: Software Engineer Intern
+        period: Jan 2026 - Jul 2026
+        description:
+          - Developed backend services and APIs using TypeScript.
+          - Implemented business logic and external system integrations.
+          - Worked with REST APIs, database operations, and caching solutions.
+          - Collaborated with cross-functional teams to deliver high-quality solutions.
+    technologies: [TypeScript, Node.js, GraphQL, Kafka, REST APIs, Firebase, MongoDB, Dynamic 365]
 
-  - title: Software Engineer Intern
-    company: Dhan AI
-    location: Remote, India
-    period: Jan 2026 - Jul 2026
-    description:
-      - Developed backend services and APIs using TypeScript.
-      - Implemented business logic and external system integrations.
-      - Worked with REST APIs, database operations, and caching solutions.
-      - Collaborated with cross-functional teams to deliver high-quality solutions.
-    technologies: [TypeScript, Node.js, GraphQL, Kafka, REST APIs, MongoDB, Dynamic 365]
-
-  - title: Software Engineer Intern
-    company: Google
+  - company: Google
     location: Bangalore, India
-    period: May 2025 - Aug 2025
-    description:
-      - Full-stack development to enhance GPay user experience by enabling immediate feedback for "Business Decline" payment errors.
-      - Implemented Java backend solutions (Frontend, Orchestration layers, proto modifications) and Flutter/Dart client-side UI for server-driven feedback chips.
-      - Worked with internal Google technologies including Protocol Buffers for defining data schemas and event codes.
-      - Aimed to significantly reduce Transaction Attempt Failure Rate (TAFR) and logged feedback data using new proto definitions.
+    roles:
+      - title: Software Engineer Intern
+        period: May 2025 - Aug 2025
+        description:
+          - Full-stack development to enhance GPay user experience by enabling immediate feedback for "Business Decline" payment errors.
+          - Implemented Java backend solutions (Frontend, Orchestration layers, proto modifications) and Flutter/Dart client-side UI for server-driven feedback chips.
+          - Worked with internal Google technologies including Protocol Buffers for defining data schemas and event codes.
+          - Aimed to significantly reduce Transaction Attempt Failure Rate (TAFR) and logged feedback data using new proto definitions.
     technologies: [Java, Flutter, Dart, Protobuf]
 
 skills:

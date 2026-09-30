@@ -38,30 +38,34 @@ export default function Experience() {
                 <div className="experience-top">
                   <div className="experience-title-block">
                     <h3>
-                      {exp.title}
-                      <span className="at"> @ </span>
                       <span className="company-name">{exp.company}</span>
                     </h3>
                     <div className="experience-meta">
-                      <span className="meta-item">
-                        <FiCalendar size={14} />
-                        {exp.period}
-                      </span>
-                      <span className="meta-dot">•</span>
-                      <span className="meta-item">
-                        <FiMapPin size={14} />
-                        {exp.location}
-                      </span>
+                      <FiMapPin size={14} />
+                      <span>{exp.location}</span>
                     </div>
                   </div>
-                  {exp.current && <span className="badge-current">Current</span>}
+                  {exp.roles.some(r => r.current) && <span className="badge-current">Current</span>}
                 </div>
 
-                <ul className="experience-description">
-                  {exp.description.map((point, i) => (
-                    <li key={i}>{point}</li>
+                <div className="role-timeline">
+                  {exp.roles.map((role, i) => (
+                    <div className="role-item" key={i}>
+                      <div className="role-top">
+                        <h4>{role.title}</h4>
+                        <span className="role-period">
+                          <FiCalendar size={13} />
+                          {role.period}
+                        </span>
+                      </div>
+                      <ul className="experience-description">
+                        {role.description.map((point, j) => (
+                          <li key={j}>{point}</li>
+                        ))}
+                      </ul>
+                    </div>
                   ))}
-                </ul>
+                </div>
 
                 <div className="tech-stack">
                   {exp.technologies.map((tech, i) => (
