@@ -55,6 +55,7 @@ export interface Education {
   school: string
   period?: string
   score: string
+  description?: string[]
 }
 
 export interface Achievement {
