@@ -1,0 +1,142 @@
+.terminal-section {
+  background: linear-gradient(180deg, transparent 0%, rgba(99, 102, 241, 0.04) 100%);
+}
+
+.iterm-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #0d1117;
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.5),
+    0 0 60px rgba(99, 102, 241, 0.08);
+  font-family: var(--font-mono);
+  cursor: text;
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.iterm-wrap:focus-within {
+  border-color: rgba(99, 102, 241, 0.6);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5), 0 0 40px rgba(99, 102, 241, 0.15);
+}
+
+.iterm-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 16px;
+  background: #161b22;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.12);
+  user-select: none;
+}
+
+.iterm-dot { width: 12px; height: 12px; border-radius: 50%; }
+.iterm-red    { background: #ff5f57; }
+.iterm-yellow { background: #ffbd2e; }
+.iterm-green  { background: #28c840; }
+
+.iterm-title {
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: #6e7681;
+  letter-spacing: 0.04em;
+}
+
+.iterm-body {
+  padding: 18px 22px 8px;
+  min-height: 260px;
+  max-height: 400px;
+  overflow-y: auto;
+  font-size: 0.87rem;
+  line-height: 1.75;
+}
+
+/* Scrollbar */
+.iterm-body::-webkit-scrollbar { width: 5px; }
+.iterm-body::-webkit-scrollbar-track { background: transparent; }
+.iterm-body::-webkit-scrollbar-thumb { background: rgba(99,102,241,0.3); border-radius: 3px; }
+
+/* Line types */
+.iterm-line { display: flex; align-items: baseline; gap: 4px; }
+
+.iterm-system { color: #6e7681; font-style: italic; }
+
+.iterm-input  { color: #e3b341; }
+
+.iterm-output {
+  display: block !important;
+  color: #a5d6ff;
+  padding-left: 12px;
+  border-left: 2px solid rgba(99, 102, 241, 0.3);
+  margin: 4px 0;
+}
+
+.iterm-error { color: #ff7b72; }
+
+.iterm-prompt {
+  color: #28c840;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Input row */
+.iterm-input-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 22px 16px;
+  border-top: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.iterm-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e3b341;
+  font-family: var(--font-mono);
+  font-size: 0.87rem;
+  caret-color: #28c840;
+}
+
+.iterm-input::placeholder {
+  color: #3d444d;
+}
+
+/* Hint chips below terminal */
+.iterm-hints {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 800px;
+  margin: var(--spacing-lg) auto 0;
+  padding: 0 2px;
+}
+
+.iterm-hint {
+  padding: 4px 12px;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.iterm-hint:hover {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .iterm-body { font-size: 0.8rem; min-height: 200px; }
+  .iterm-input { font-size: 0.8rem; }
+  .iterm-input-row { padding: 10px 16px 14px; }
+  .iterm-body { padding: 14px 16px 6px; }
+}

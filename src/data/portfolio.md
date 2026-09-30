@@ -1,0 +1,136 @@
+---
+name: Ragini Karuturi
+tagline: Software Engineer · Full Stack Engineer
+
+roles:
+  - Full Stack Engineer
+  - Backend Developer
+  - Google WE Scholar
+  - Rustacean
+  - Problem Solver
+
+hero:
+  greeting: "Hello, World!"
+  bio: >-
+    I build scalable backend services, APIs, and delightful user interfaces.
+    Passionate about Rust, distributed systems, and writing clean code.
+  ctaPrimary: { label: "Let's Connect", href: "#contact" }
+  ctaSecondary: { label: "View Projects", href: "#projects" }
+  available: "Open to new opportunities"
+  snippet:
+    filename: ragini.ts
+    name: Ragini Karuturi
+    role: Software Engineer
+    company: Dhan
+    languages: [Rust, Elixir, TypeScript, Go, Java, Python]
+    loves: Building cool things
+    comments:
+      - "Google WE Scholar"
+      - "Codess.cafe Mentee"
+
+stats:
+  - { label: "WE Scholar",         value: "🎯" }
+  - { label: "Codess.cafe Mentee", value: "✨" }
+  - { label: "GDG DSA Co-Lead",    value: "🚀" }
+
+experience:
+  - title: Junior Software Engineer
+    company: Dhan AI
+    location: Remote, India
+    period: Aug 2026 - Present
+    current: true
+    description:
+      - Developing backend services and APIs using TypeScript.
+      - Implementing business logic and external system integrations.
+      - Working with REST APIs, database operations, and caching solutions.
+      - Collaborating with cross-functional teams to deliver high-quality solutions.
+    technologies: [TypeScript, Node.js, GraphQL, REST APIs, MongoDB, Dynamic 365]
+
+  - title: Software Engineer Intern
+    company: Dhan AI
+    location: Remote, India
+    period: Jan 2026 - Jul 2026
+    description:
+      - Developed backend services and APIs using TypeScript.
+      - Implemented business logic and external system integrations.
+      - Worked with REST APIs, database operations, and caching solutions.
+      - Collaborated with cross-functional teams to deliver high-quality solutions.
+    technologies: [TypeScript, Node.js, GraphQL, Kafka, REST APIs, MongoDB, Dynamic 365]
+
+  - title: Software Engineer Intern
+    company: Google
+    location: Bangalore, India
+    period: May 2025 - Aug 2025
+    description:
+      - Full-stack development to enhance GPay user experience by enabling immediate feedback for "Business Decline" payment errors.
+      - Implemented Java backend solutions (Frontend, Orchestration layers, proto modifications) and Flutter/Dart client-side UI for server-driven feedback chips.
+      - Worked with internal Google technologies including Protocol Buffers for defining data schemas and event codes.
+      - Aimed to significantly reduce Transaction Attempt Failure Rate (TAFR) and logged feedback data using new proto definitions.
+    technologies: [Java, Flutter, Dart, Protobuf]
+
+skills:
+  categories:
+    - title: Languages
+      icon: FiCode
+      color: primary
+      skills: [C, Python, Java, Haskell, Rust, Elixir, Dart, JavaScript, TypeScript]
+    - title: Web & Frameworks
+      icon: FiLayers
+      color: secondary
+      skills: [HTML, CSS, Flutter, Phoenix, Node.js]
+    - title: Databases
+      icon: FiDatabase
+      color: accent
+      skills: [MySQL, PostgreSQL, MongoDB]
+    - title: Tools & Platforms
+      icon: FiTool
+      color: primary
+      skills: [Git, GitHub, GitLab, Google Colab, Postman, Bruno, Linux, Protobuf]
+
+projects:
+  featured:
+    - title: RustGit
+      description: A custom version control system built using Rust, supporting essential Git-like commands for learning and experimentation.
+      longDescription: A fully functional version control system implemented in Rust from scratch. Supports init, add, status, commit, jumpTo, and log commands with proper blob and tree structure management.
+      technologies: [Rust, File Systems, Data Structures, CLI]
+      features: [Initialize repositories, Track file changes, Commit management, Revision history]
+      github: "#"
+
+    - title: Eventure
+      description: An RSVP application with organizer and user roles, enabling seat reservations, event tracking, and real-time chat.
+      longDescription: A comprehensive event management platform with Phoenix LiveView for real-time updates. Features dual-role support for organizers and attendees, seat reservation system, and integrated chat for registered users.
+      technologies: [Elixir, Phoenix Framework, LiveView, PostgreSQL]
+      features: [Event creation & management, Seat reservations, Real-time chat, User roles]
+      github: "#"
+
+
+education:
+  - degree: B.Tech — Information Technology
+    school: Shri Vishnu Engineering College for Women
+    score: "CGPA: 8.89"
+    period: 2022 – 2026
+
+achievements:
+  - title: Google WE Scholar
+    icon: "🎯"
+    details:
+      - Selected as one of the top 200 members out of 20,000+ applicants for the prestigious Women Engineers (WE) Program.
+      - Offered by TalentSprint and supported by Google.
+      - 24-month training program covering technical and corporate skills.
+      - Awarded an additional ₹1 lakh stipend.
+
+contact:
+  intro: >-
+    I'm always open to new opportunities and interesting projects. Whether you want to discuss a
+    collaboration, have a question, or just want to connect — feel free to reach out!
+  email: raginikaruturi@gmail.com
+  linkedin: linkedin.com/in/ragini-karuturi-514b80256
+---
+
+## About
+
+I am a software engineer who started my career with a passion for solving problems — thinking through different approaches, exploring new technologies, and building interesting things.
+
+I take ownership of what I build — from the first line of code to the impact it creates — and I hold myself accountable for the quality and outcomes of my work.
+
+Every project is an opportunity to learn something new, push my limits, and build with intention.

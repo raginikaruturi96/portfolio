@@ -1,0 +1,271 @@
+.about {
+  background: linear-gradient(180deg, transparent 0%, rgba(99, 102, 241, 0.05) 100%);
+}
+
+.section-header {
+  text-align: left;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.section-header h2 {
+  margin-bottom: var(--spacing-md);
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-2xl);
+  align-items: start;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-lg);
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-bubbles {
+  position: relative;
+  min-height: 380px;
+  padding: 1rem;
+  overflow: hidden;
+  --mx: 0;
+  --my: 0;
+}
+
+/* Decorative floating micro-bubbles rising in the background */
+.bubble-field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.deco-bubble {
+  position: absolute;
+  bottom: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(129, 140, 248, 0.55) 55%, transparent 75%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 12px rgba(129, 140, 248, 0.35), inset 0 0 6px rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  animation: bubble-rise linear infinite;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.4s ease-out;
+  will-change: transform, opacity;
+}
+
+[data-theme='light'] .deco-bubble {
+  background: radial-gradient(circle at 30% 30%, rgba(79, 70, 229, 0.85), rgba(219, 39, 119, 0.5) 55%, transparent 75%);
+  border-color: rgba(79, 70, 229, 0.35);
+  box-shadow: 0 0 14px rgba(79, 70, 229, 0.45), inset 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+.about-bubbles:hover .deco-bubble {
+  transform: translate3d(
+    calc(var(--mx) * var(--parallax, 14px) * -1),
+    calc(var(--my) * var(--parallax, 14px) * -1),
+    0
+  );
+}
+
+@keyframes bubble-rise {
+  0%   { transform: translateY(0) translateX(0) scale(0.6); opacity: 0; }
+  10%  { opacity: 0.95; }
+  50%  { transform: translateY(-220px) translateX(calc(var(--drift, 0) * 4px)) scale(1); }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(-460px) translateX(calc(var(--drift, 0) * -4px)) scale(1.2); opacity: 0; }
+}
+
+/* Main labelled bubbles */
+.about-bubble {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding: 1rem;
+  text-align: center;
+  color: var(--text);
+  font-weight: 600;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.1) 25%, transparent 45%),
+    radial-gradient(circle at 70% 75%, rgba(236, 72, 153, 0.35), transparent 55%),
+    radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.35), rgba(15, 23, 42, 0.65) 80%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    inset 0 0 25px rgba(255, 255, 255, 0.12),
+    0 10px 30px rgba(99, 102, 241, 0.35),
+    0 0 40px rgba(236, 72, 153, 0.2);
+  backdrop-filter: blur(6px);
+  cursor: default;
+  animation: bubble-float 6s ease-in-out infinite;
+  transition: transform 0.35s ease-out;
+}
+
+.about-bubbles:hover .about-bubble {
+  transform: translate3d(
+    calc(var(--mx) * 20px),
+    calc(var(--my) * 20px),
+    0
+  );
+}
+
+.about-bubble::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 65% 35%, rgba(255, 255, 255, 0.35), transparent 25%);
+  pointer-events: none;
+}
+
+.bubble-shine {
+  position: absolute;
+  top: 14%;
+  left: 22%;
+  width: 28%;
+  height: 18%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.85), transparent 70%);
+  border-radius: 50%;
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.bubble-icon {
+  font-size: 2rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+}
+
+.bubble-label {
+  font-size: 0.85rem;
+  background: linear-gradient(135deg, #fff, #e0e7ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+/* Staggered positions + individual float timings */
+.bubble-0 {
+  top: 8%;
+  left: 12%;
+  animation-duration: 7s;
+}
+.bubble-1 {
+  top: 22%;
+  right: 8%;
+  width: 170px;
+  height: 170px;
+  animation-duration: 8s;
+  animation-delay: -2s;
+}
+.bubble-2 {
+  bottom: 8%;
+  left: 30%;
+  width: 160px;
+  height: 160px;
+  animation-duration: 6.5s;
+  animation-delay: -4s;
+}
+
+@keyframes bubble-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-14px) rotate(2deg); }
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.highlight-card {
+  text-align: center;
+  padding: var(--spacing-lg);
+  background: var(--surface);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  transition: all var(--transition-normal);
+}
+
+.highlight-card:hover {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: var(--primary);
+  transform: translateY(-5px);
+}
+
+.highlight-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.highlight-card h4 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.highlight-card p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    gap: var(--spacing-xl);
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .about-bubbles {
+    min-height: 340px;
+  }
+
+  .about-bubble {
+    width: 130px;
+    height: 130px;
+  }
+
+  .bubble-1, .bubble-2 {
+    width: 140px;
+    height: 140px;
+  }
+
+  .bubble-icon { font-size: 1.6rem; }
+  .bubble-label { font-size: 0.78rem; }
+}
+
+@media (max-width: 480px) {
+  .about-text p {
+    font-size: 0.95rem;
+  }
+
+  .highlight-card {
+    padding: var(--spacing-md);
+  }
+}
