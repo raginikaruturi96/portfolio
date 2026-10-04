@@ -132,6 +132,12 @@ achievements:
       - 24-month training program covering technical and corporate skills.
       - Awarded an additional ₹1 lakh stipend.
 
+  - title: CMI Entrance Shortlist
+    icon: "🏆"
+    details:
+      - Shortlisted among the top 30 candidates in an entrance examination conducted for Chennai Mathematical Institute (CMI), during the 1st year of B.Tech.
+      - Competed against B.Tech, M.Tech, and MBA students from various colleges.
+
 contact:
   intro: >-
     I'm always open to new opportunities and interesting projects. Whether you want to discuss a
