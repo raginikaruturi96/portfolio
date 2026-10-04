@@ -1,5 +1,7 @@
 .about {
   background: linear-gradient(180deg, transparent 0%, rgba(99, 102, 241, 0.05) 100%);
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
 }
 
 .section-header {
@@ -19,7 +21,7 @@
 
 .about-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 0.75fr;
   gap: var(--spacing-2xl);
   align-items: start;
   margin-bottom: var(--spacing-2xl);
@@ -38,55 +40,13 @@
 
 .about-bubbles {
   position: relative;
-  min-height: 380px;
-  padding: 1rem;
-  overflow: hidden;
+  min-height: 420px;
+  margin-top: -6.5rem;
+  padding: 1rem 0 1rem 1rem;
+  margin-right: -1rem;
+  overflow: visible;
   --mx: 0;
   --my: 0;
-}
-
-/* Decorative floating micro-bubbles rising in the background */
-.bubble-field {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.deco-bubble {
-  position: absolute;
-  bottom: -20px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(129, 140, 248, 0.55) 55%, transparent 75%);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 0 12px rgba(129, 140, 248, 0.35), inset 0 0 6px rgba(255, 255, 255, 0.3);
-  opacity: 0;
-  animation: bubble-rise linear infinite;
-  transform: translate3d(0, 0, 0);
-  transition: transform 0.4s ease-out;
-  will-change: transform, opacity;
-}
-
-[data-theme='light'] .deco-bubble {
-  background: radial-gradient(circle at 30% 30%, rgba(79, 70, 229, 0.85), rgba(219, 39, 119, 0.5) 55%, transparent 75%);
-  border-color: rgba(79, 70, 229, 0.35);
-  box-shadow: 0 0 14px rgba(79, 70, 229, 0.45), inset 0 0 6px rgba(255, 255, 255, 0.5);
-}
-
-.about-bubbles:hover .deco-bubble {
-  transform: translate3d(
-    calc(var(--mx) * var(--parallax, 14px) * -1),
-    calc(var(--my) * var(--parallax, 14px) * -1),
-    0
-  );
-}
-
-@keyframes bubble-rise {
-  0%   { transform: translateY(0) translateX(0) scale(0.6); opacity: 0; }
-  10%  { opacity: 0.95; }
-  50%  { transform: translateY(-220px) translateX(calc(var(--drift, 0) * 4px)) scale(1); }
-  90%  { opacity: 0.6; }
-  100% { transform: translateY(-460px) translateX(calc(var(--drift, 0) * -4px)) scale(1.2); opacity: 0; }
 }
 
 /* Main labelled bubbles */
@@ -115,7 +75,7 @@
     0 0 40px rgba(236, 72, 153, 0.2);
   backdrop-filter: blur(6px);
   cursor: default;
-  animation: bubble-float 6s ease-in-out infinite;
+  animation: bubble-float var(--float-dur, 6s) ease-in-out infinite;
   transition: transform 0.35s ease-out;
 }
 
@@ -163,32 +123,57 @@
   line-height: 1.2;
 }
 
-/* Staggered positions + individual float timings */
+/* Staggered positions + individual float timings, varying sizes — scattered, not grid-aligned */
 .bubble-0 {
-  top: 8%;
-  left: 12%;
-  animation-duration: 7s;
+  top: 4%;
+  left: 6%;
+  width: 190px;
+  height: 190px;
+  --float-dur: 7.4s;
+  --fx: 10px;
+  --fy: -18px;
+  --frot: -3deg;
+  animation-delay: -1.2s;
 }
 .bubble-1 {
-  top: 22%;
-  right: 8%;
-  width: 170px;
-  height: 170px;
-  animation-duration: 8s;
-  animation-delay: -2s;
+  top: 24%;
+  right: 19%;
+  width: 130px;
+  height: 130px;
+  --float-dur: 6.1s;
+  --fx: -14px;
+  --fy: -12px;
+  --frot: 4deg;
+  animation-delay: -3.6s;
 }
 .bubble-2 {
-  bottom: 8%;
-  left: 30%;
-  width: 160px;
-  height: 160px;
-  animation-duration: 6.5s;
-  animation-delay: -4s;
+  bottom: 16%;
+  left: 29%;
+  width: 150px;
+  height: 150px;
+  --float-dur: 8.2s;
+  --fx: 12px;
+  --fy: -16px;
+  --frot: -4deg;
+  animation-delay: -5.1s;
+}
+.bubble-3 {
+  bottom: 2%;
+  right: 22%;
+  width: 115px;
+  height: 115px;
+  --float-dur: 5.6s;
+  --fx: -9px;
+  --fy: -20px;
+  --frot: 5deg;
+  animation-delay: -0.4s;
 }
 
 @keyframes bubble-float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50%      { transform: translateY(-14px) rotate(2deg); }
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  33%  { transform: translate(calc(var(--fx, 10px) * 0.6), calc(var(--fy, -14px) * 0.8)) rotate(calc(var(--frot, 3deg) * 0.6)); }
+  66%  { transform: translate(calc(var(--fx, 10px) * -0.8), calc(var(--fy, -14px) * 0.3)) rotate(calc(var(--frot, 3deg) * -0.8)); }
+  100% { transform: translate(0, 0) rotate(0deg); }
 }
 
 .about-highlights {
@@ -243,7 +228,7 @@
   }
 
   .about-bubbles {
-    min-height: 340px;
+    min-height: 420px;
   }
 
   .about-bubble {
@@ -251,7 +236,7 @@
     height: 130px;
   }
 
-  .bubble-1, .bubble-2 {
+  .bubble-1, .bubble-2, .bubble-3 {
     width: 140px;
     height: 140px;
   }

@@ -32,6 +32,7 @@ stats:
   - { label: "WE Scholar",         value: "🎯" }
   - { label: "Codess.cafe Mentee", value: "✨" }
   - { label: "GDG DSA Co-Lead",    value: "🚀" }
+  - { label: "ISTE Coordinator",   value: "🏅" }
 
 experience:
   - company: Dhan AI

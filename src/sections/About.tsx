@@ -61,28 +61,6 @@ export default function About() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="bubble-field" aria-hidden="true">
-              {Array.from({ length: 32 }).map((_, i) => {
-                const size = 10 + (i % 6) * 5
-                const drift = (i % 7) - 3
-                return (
-                  <span
-                    key={i}
-                    className="deco-bubble"
-                    style={{
-                      left: `${(i * 11.3 + 3) % 96}%`,
-                      width: `${size}px`,
-                      height: `${size}px`,
-                      animationDuration: `${9 + (i % 7)}s`,
-                      animationDelay: `${(i * 0.55) % 6}s`,
-                      ['--parallax' as string]: `${(i % 5) * 6 + 8}px`,
-                      ['--drift' as string]: `${drift}`,
-                    }}
-                  />
-                )
-              })}
-            </div>
-
             {stats.map((stat, index) => (
               <motion.div
                 key={index}

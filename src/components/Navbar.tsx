@@ -12,7 +12,6 @@ const NAV_LINKS = [
   { label: 'About', id: 'about' },
   { label: 'Skills', id: 'skills' },
   { label: 'Experience', id: 'experience' },
-  { label: 'Education', id: 'education' },
   { label: 'Projects', id: 'projects' },
   { label: 'Contact', id: 'contact' },
 ]
@@ -50,7 +49,7 @@ export default function Navbar({ scrolled, theme, toggleTheme }: NavbarProps) {
           onClick={() => setIsOpen(false)}
           aria-current={activeId === 'hero' ? 'page' : undefined}
         >
-          <h3>Ragini Karuturi</h3>
+          <h3>RK</h3>
         </a>
 
         <button
