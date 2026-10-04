@@ -61,7 +61,7 @@
 /* Line types */
 .iterm-line { display: flex; align-items: baseline; gap: 4px; }
 
-.iterm-system { color: #6e7681; font-style: italic; }
+.iterm-system { color: #6e7681; font-style: italic; white-space: pre; }
 
 .iterm-input  { color: #e3b341; }
 
