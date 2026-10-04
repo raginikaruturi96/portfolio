@@ -30,8 +30,10 @@ export default function Achievements() {
               viewport={{ once: true }}
               whileHover={{ y: -4 }}
             >
-              <div className="achievement-icon">{a.icon}</div>
-              <h3 className="achievement-title">{a.title}</h3>
+              <div className="achievement-header">
+                <div className="achievement-icon">{a.icon}</div>
+                <h3 className="achievement-title">{a.title}</h3>
+              </div>
               <ul className="achievement-details">
                 {a.details.map((d, i) => (
                   <li key={i}>{d}</li>
