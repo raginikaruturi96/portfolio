@@ -88,17 +88,23 @@ skills:
 projects:
   featured:
     - title: RustGit
-      description: A custom version control system built using Rust, supporting essential Git-like commands for learning and experimentation.
-      longDescription: A fully functional version control system implemented in Rust from scratch. Supports init, add, status, commit, jumpTo, and log commands with proper blob and tree structure management.
+      description:
+        -  A custom version control system built using Rust, supporting essential Git-like commands
+        - A personal project to learn how version control systems work behind the scenes
+        - Tracks file changes by hashing content, so each saved version has a unique identity
+        - Links commits together to form a chain, making it possible to trace the full history
       technologies: [Rust, File Systems, Data Structures, CLI]
       features: [Initialize repositories, Track file changes, Commit management, Revision history]
       github: "#"
 
     - title: Eventure
-      description: An RSVP application with organizer and user roles, enabling seat reservations, event tracking, and real-time chat.
-      longDescription: A comprehensive event management platform with Phoenix LiveView for real-time updates. Features dual-role support for organizers and attendees, seat reservation system, and integrated chat for registered users.
+      description:
+        - Built an RSVP application supporting different roles — organizer and attendee
+        - Uses Phoenix LiveView to show live updates on the page without writing separate frontend code
+        - Stores event, user, and booking data reliably using PostgreSQL
+        - Built as a way to explore real-time web features using the Phoenix framework
       technologies: [Elixir, Phoenix Framework, LiveView, PostgreSQL]
-      features: [Event creation & management, Seat reservations, Real-time chat, User roles]
+      features: [Event creation, Seat reservations, Real-time chat, User roles]
       github: "#"
 
 
