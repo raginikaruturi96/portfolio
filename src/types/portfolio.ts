@@ -37,8 +37,7 @@ export interface Experience {
 
 export interface FeaturedProject {
   title: string
-  description: string
-  longDescription: string
+  description: string[]
   technologies: string[]
   features: string[]
   github: string

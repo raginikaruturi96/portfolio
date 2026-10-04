@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { FiGithub, FiExternalLink } from 'react-icons/fi'
 import { portfolio } from '../data/portfolio'
 import './Projects.css'
 
@@ -32,17 +31,13 @@ export default function Projects() {
             >
               <div className="project-header">
                 <h3>{project.title}</h3>
-                <div className="project-links">
-                  <a href={project.github} className="project-link" title="View on GitHub">
-                    <FiGithub size={22} />
-                  </a>
-                  <a href={project.demo} className="project-link" title="View Demo">
-                    <FiExternalLink size={22} />
-                  </a>
-                </div>
               </div>
 
-              <p className="project-description">{project.longDescription}</p>
+              <ul className="project-description">
+                {project.description.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
 
               <div className="project-features">
                 <h4>Key Features</h4>
