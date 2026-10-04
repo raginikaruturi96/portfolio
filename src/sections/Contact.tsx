@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FiMail, FiLinkedin, FiCopy, FiCheck, FiArrowUpRight } from 'react-icons/fi'
+import { FiMail, FiLinkedin, FiGithub, FiCopy, FiCheck, FiArrowUpRight } from 'react-icons/fi'
 import { portfolio } from '../data/portfolio'
 import './Contact.css'
 
@@ -11,6 +11,10 @@ export default function Contact() {
   const linkedinUrl = contact.linkedin.startsWith('http')
     ? contact.linkedin
     : `https://${contact.linkedin}`
+
+  const githubUrl = contact.github.startsWith('http')
+    ? contact.github
+    : `https://${contact.github}`
 
   const copyEmail = async () => {
     try {
@@ -33,59 +37,63 @@ export default function Contact() {
           viewport={{ once: true }}
         >
           <h2 className="contact-heading">
-            <span className="prompt">$</span>
-            <span className="cmd">say_hello</span>
-            <span className="wave">👋</span>
+            <span className="cmd">Connect</span>
           </h2>
           <p className="section-subtitle">Let's build something interesting together.</p>
         </motion.div>
 
         <motion.div
-          className="contact-card"
+          className="contact-content"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <div className="contact-card-inner">
-            <div className="glow glow-a" aria-hidden="true" />
-            <div className="glow glow-b" aria-hidden="true" />
+          <p className="contact-intro">{contact.intro}</p>
 
-            <p className="contact-intro">{contact.intro}</p>
-
-            <div className="email-row">
-              <div className="email-chip">
-                <FiMail size={20} />
-                <span className="email-text">{contact.email}</span>
-              </div>
-              <button
-                type="button"
-                onClick={copyEmail}
-                className={`copy-btn ${copied ? 'copied' : ''}`}
-                aria-label="Copy email"
-                title={copied ? 'Copied!' : 'Copy email'}
-              >
-                {copied ? <FiCheck size={18} /> : <FiCopy size={18} />}
-              </button>
+          <div className="email-row">
+            <div className="email-chip">
+              <FiMail size={20} />
+              <span className="email-text">{contact.email}</span>
+              <span className="blink-cursor" aria-hidden="true" />
             </div>
+            <button
+              type="button"
+              onClick={copyEmail}
+              className={`copy-btn ${copied ? 'copied' : ''}`}
+              aria-label="Copy email"
+              title={copied ? 'Copied!' : 'Copy email'}
+            >
+              {copied ? <FiCheck size={18} /> : <FiCopy size={18} />}
+            </button>
+          </div>
 
-            <div className="contact-actions">
-              <a href={`mailto:${contact.email}`} className="btn-cta btn-cta-primary">
-                <FiMail size={18} />
-                Send a message
-                <FiArrowUpRight size={16} className="arrow" />
-              </a>
-              <a
-                href={linkedinUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-cta btn-cta-secondary"
-              >
-                <FiLinkedin size={18} />
-                Connect on LinkedIn
-                <FiArrowUpRight size={16} className="arrow" />
-              </a>
-            </div>
+          <div className="contact-actions">
+            <a href={`mailto:${contact.email}`} className="btn-cta btn-cta-primary">
+              <FiMail size={18} />
+              Email
+              <FiArrowUpRight size={16} className="arrow" />
+            </a>
+            <a
+              href={linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-cta btn-cta-secondary"
+            >
+              <FiLinkedin size={18} />
+              LinkedIn
+              <FiArrowUpRight size={16} className="arrow" />
+            </a>
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-cta btn-cta-secondary"
+            >
+              <FiGithub size={18} />
+              GitHub
+              <FiArrowUpRight size={16} className="arrow" />
+            </a>
           </div>
         </motion.div>
       </div>

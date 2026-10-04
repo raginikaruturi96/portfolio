@@ -71,6 +71,7 @@ export interface Contact {
   intro: string
   email: string
   linkedin: string
+  github: string
 }
 
 export interface PortfolioData {

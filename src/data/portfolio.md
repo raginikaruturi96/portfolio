@@ -144,6 +144,7 @@ contact:
     collaboration, have a question, or just want to connect — feel free to reach out!
   email: raginikaruturi@gmail.com
   linkedin: linkedin.com/in/ragini-karuturi-514b80256
+  github: github.com/raginikaruturi96
 ---
 
 ## About

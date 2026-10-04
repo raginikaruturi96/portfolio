@@ -22,76 +22,16 @@
 }
 
 .contact-heading .cmd {
-  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text);
 }
 
-.contact-heading .wave {
-  display: inline-block;
-  animation: wave 2.4s ease-in-out infinite;
-  transform-origin: 70% 70%;
-  filter: drop-shadow(0 4px 10px rgba(236, 72, 153, 0.35));
-}
-
-@keyframes wave {
-  0%, 60%, 100% { transform: rotate(0deg); }
-  10%           { transform: rotate(14deg); }
-  20%           { transform: rotate(-8deg); }
-  30%           { transform: rotate(14deg); }
-  40%           { transform: rotate(-4deg); }
-  50%           { transform: rotate(10deg); }
-}
-
-/* Card */
-.contact-card {
+/* Content (no card wrapper — single section, no need to box it) */
+.contact-content {
   max-width: 720px;
   margin: 2.5rem 0 0;
 }
 
-.contact-card-inner {
-  position: relative;
-  padding: 2.5rem;
-  border-radius: 20px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
-  border: 1px solid var(--card-border);
-  backdrop-filter: blur(8px);
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-}
-
-.glow {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  filter: blur(60px);
-  pointer-events: none;
-  opacity: 0.55;
-  animation: glow-drift 12s ease-in-out infinite;
-}
-
-.glow-a {
-  top: -100px;
-  left: -80px;
-  background: rgba(99, 102, 241, 0.55);
-}
-
-.glow-b {
-  bottom: -120px;
-  right: -100px;
-  background: rgba(236, 72, 153, 0.5);
-  animation-delay: -6s;
-}
-
-@keyframes glow-drift {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%      { transform: translate(30px, -20px) scale(1.15); }
-}
-
 .contact-intro {
-  position: relative;
   color: var(--text-muted);
   font-size: 1.05rem;
   line-height: 1.75;
@@ -101,7 +41,6 @@
 
 /* Email chip row */
 .email-row {
-  position: relative;
   display: flex;
   align-items: stretch;
   gap: 0.6rem;
@@ -109,22 +48,65 @@
 }
 
 .email-chip {
+  position: relative;
   flex: 1;
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
   padding: 0.85rem 1.1rem;
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid var(--card-border);
+  background: #0b1220;
   border-radius: 12px;
   color: var(--text);
   font-family: 'JetBrains Mono', var(--font-mono), monospace;
   font-size: 1rem;
   overflow: hidden;
+  z-index: 0;
+}
+
+.email-chip::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  border-radius: 14px;
+  background: conic-gradient(from var(--chip-deg, 0deg), var(--primary), var(--accent), var(--secondary), var(--primary));
+  animation: chip-spin 4s linear infinite;
+}
+
+.email-chip::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  z-index: -1;
+  border-radius: 11px;
+  background: #0b1220;
+}
+
+@property --chip-deg {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes chip-spin {
+  to { --chip-deg: 360deg; }
 }
 
 .email-chip svg { color: var(--accent); flex-shrink: 0; }
 .email-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.blink-cursor {
+  width: 2px;
+  height: 1.1em;
+  background: var(--accent);
+  animation: blink 1s step-end infinite;
+  flex-shrink: 0;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 
 .copy-btn {
   display: inline-flex;
@@ -152,17 +134,24 @@
   background: rgba(16, 185, 129, 0.15);
   border-color: var(--success);
   color: var(--success);
+  animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.25) rotate(-8deg); }
+  100% { transform: scale(1); }
 }
 
 /* Action buttons */
 .contact-actions {
-  position: relative;
   display: flex;
   gap: 0.85rem;
   flex-wrap: wrap;
 }
 
 .btn-cta {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
@@ -173,7 +162,33 @@
   text-decoration: none;
   cursor: pointer;
   border: 1px solid transparent;
+  overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.25s ease;
+}
+
+.btn-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.btn-cta:hover::before {
+  left: 130%;
+}
+
+.btn-cta svg:first-child {
+  transition: transform 0.35s ease;
+}
+
+.btn-cta:hover svg:first-child {
+  transform: rotate(-12deg) scale(1.15);
 }
 
 .btn-cta .arrow {
@@ -191,8 +206,9 @@
 }
 
 .btn-cta-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 34px rgba(236, 72, 153, 0.4);
+  color: #fff;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 34px rgba(245, 243, 244, 0.94);
 }
 
 .btn-cta-secondary {
@@ -202,16 +218,16 @@
 }
 
 .btn-cta-secondary:hover {
-  transform: translateY(-2px);
+  color: var(--accent);
+  transform: translateY(-3px) scale(1.03);
   background: rgba(6, 182, 212, 0.2);
   border-color: var(--accent);
-  box-shadow: 0 10px 25px rgba(6, 182, 212, 0.25);
+  box-shadow: 0 10px 25px rgba(6, 182, 212, 0.3);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .contact-heading { font-size: 1.7rem; }
-  .contact-card-inner { padding: 1.75rem; }
   .contact-intro { font-size: 0.98rem; }
   .email-chip { font-size: 0.9rem; padding: 0.75rem 0.9rem; }
   .copy-btn { width: 44px; }
