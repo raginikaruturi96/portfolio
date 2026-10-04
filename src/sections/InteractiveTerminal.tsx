@@ -104,7 +104,7 @@ const BOOT_LINES: TerminalLine[] = [
   { type: 'system', content: '  ██████╔╝ █████╔╝ ' },
   { type: 'system', content: '  ██╔══██╗ ██╔═██╗ ' },
   { type: 'system', content: '  ██║  ██║ ██║  ██╗' },
-  { type: 'system', content: '  ╚═╝  ╚═╝ ╚═╝  ╚═╝  ragini@portfolio' },
+  { type: 'system', content: '  ╚═╝  ╚═╝ ╚═╝  ╚═╝' },
   { type: 'system', content: '' },
   { type: 'system', content: `  ${portfolio.tagline}` },
   { type: 'system', content: '' },

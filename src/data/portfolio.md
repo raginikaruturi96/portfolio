@@ -1,6 +1,6 @@
 ---
 name: Ragini Karuturi
-tagline: Software Engineer · Full Stack Engineer
+tagline: Full Stack Engineer
 
 roles:
   - Full Stack Engineer
