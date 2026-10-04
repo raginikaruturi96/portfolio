@@ -11,6 +11,7 @@ export default function Footer() {
         <div className="footer-content">
           <div className="footer-section">
             <h3>{name}</h3>
+            <span className="footer-divider" aria-hidden="true" />
             <p>{tagline}</p>
           </div>
         </div>

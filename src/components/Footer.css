@@ -1,14 +1,14 @@
 .footer {
   background: var(--surface);
   border-top: 1px solid var(--card-border);
-  padding: var(--spacing-2xl) 0 var(--spacing-lg);
-  margin-top: var(--spacing-2xl);
+  padding: var(--spacing-md) 0 var(--spacing-sm);
+  margin-top: var(--spacing-lg);
 }
 
 .footer .container {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-2xl);
+  gap: var(--spacing-sm);
 }
 
 .footer-content {
@@ -17,12 +17,25 @@
   gap: var(--spacing-2xl);
 }
 
+.footer-section {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
 .footer-section h3 {
-  margin-bottom: var(--spacing-md);
+  margin: 0;
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.footer-divider {
+  width: 1px;
+  height: 1.1em;
+  background: var(--card-border);
 }
 
 .footer-section h4 {
@@ -31,7 +44,7 @@
 }
 
 .footer-section p {
-  margin-bottom: var(--spacing-sm);
+  margin: 0;
   color: var(--text-muted);
   line-height: 1.6;
 }
@@ -99,10 +112,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
   border-top: 1px solid var(--card-border);
   flex-wrap: wrap;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
 }
 
 .footer-bottom p {
