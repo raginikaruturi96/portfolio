@@ -2,6 +2,8 @@ import { motion } from 'framer-motion'
 import { FiArrowDown } from 'react-icons/fi'
 import { useTypewriter } from '../hooks/useTypewriter'
 import { portfolio } from '../data/portfolio'
+import lightModeDuck from '../assets/images/lightModeDuck.jpg'
+import darkModeDuck from '../assets/images/darkModeDuck.jpg'
 import './Hero.css'
 
 const containerVariants = {
@@ -16,10 +18,6 @@ const itemVariants = {
 export default function Hero() {
   const role = useTypewriter(portfolio.roles)
   const { name, hero } = portfolio
-  const s = hero.snippet
-
-  const langRows: string[][] = []
-  for (let i = 0; i < s.languages.length; i += 3) langRows.push(s.languages.slice(i, i + 3))
 
   return (
     <section id="hero" className="hero">
@@ -58,45 +56,13 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          className="hero-terminal-wrap"
+          className="hero-image-wrap"
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, delay: 0.5, ease: 'easeOut' }}
         >
-          <div className="terminal">
-            <div className="terminal-bar">
-              <span className="td td-red" />
-              <span className="td td-yellow" />
-              <span className="td td-green" />
-              <span className="terminal-filename">{s.filename}</span>
-            </div>
-            <div className="terminal-code">
-              <p><span className="kw">const</span> <span className="va">dev</span> = {'{'}</p>
-              <p>&nbsp;&nbsp;<span className="ke">name</span>:&nbsp;<span className="st">"{s.name}"</span>,</p>
-              <p>&nbsp;&nbsp;<span className="ke">role</span>:&nbsp;<span className="st">"{s.role}"</span>,</p>
-              <p>&nbsp;&nbsp;<span className="ke">company</span>:&nbsp;<span className="st">"{s.company}"</span>,</p>
-              <p>&nbsp;&nbsp;<span className="ke">languages</span>: [</p>
-              {langRows.map((row, ri) => (
-                <p key={ri}>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                  {row.map((lang, li) => {
-                    const isLast = ri === langRows.length - 1 && li === row.length - 1
-                    return (
-                      <span key={li}>
-                        <span className="st">"{lang}"</span>{isLast ? '' : ', '}
-                      </span>
-                    )
-                  })}
-                </p>
-              ))}
-              <p>&nbsp;&nbsp;],</p>
-              <p>&nbsp;&nbsp;<span className="ke">loves</span>:&nbsp;<span className="st">"{s.loves}"</span></p>
-              <p>{'}'}</p>
-              {s.comments.map((c, i) => (
-                <p key={i} className="cm">{`// ${c}`}</p>
-              ))}
-            </div>
-          </div>
+          <img className="hero-image hero-image-light" src={lightModeDuck} alt="A developer duck wearing headphones and coding" />
+          <img className="hero-image hero-image-dark" src={darkModeDuck} alt="A developer duck wearing headphones and coding" />
         </motion.div>
       </div>
 

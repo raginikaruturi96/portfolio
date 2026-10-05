@@ -199,62 +199,27 @@
   padding-top: 4px;
 }
 
-/* Terminal card */
-.hero-terminal-wrap {
+/* Hero artwork */
+.hero-image-wrap {
   display: flex;
   justify-content: center;
 }
 
-.terminal {
+.hero-image {
+  display: block;
   width: 100%;
-  max-width: 440px;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #0d1117;
-  border: 1px solid rgba(99, 102, 241, 0.35);
-  box-shadow:
-    0 30px 70px rgba(0, 0, 0, 0.5),
-    0 0 60px rgba(99, 102, 241, 0.08);
-  font-family: var(--font-mono);
+  max-width: 520px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 20px;
+  /* box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38), 0 0 55px rgba(99, 102, 241, 0.18); */
   animation: float 5s ease-in-out infinite;
 }
 
-.terminal-bar {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 11px 16px;
-  background: #161b22;
-  border-bottom: 1px solid rgba(99, 102, 241, 0.12);
-}
+.hero-image-light { display: none; }
 
-.td { width: 12px; height: 12px; border-radius: 50%; }
-.td-red    { background: #ff5f57; }
-.td-yellow { background: #ffbd2e; }
-.td-green  { background: #28c840; }
-
-.terminal-filename {
-  margin-left: auto;
-  font-size: 0.78rem;
-  color: #6e7681;
-  letter-spacing: 0.04em;
-}
-
-.terminal-code {
-  padding: 20px 22px;
-  font-size: 0.88rem;
-  line-height: 1.95;
-  color: #c9d1d9;
-}
-
-.terminal-code p { margin: 0; }
-
-/* GitHub-flavored syntax colors */
-.kw { color: #ff7b72; }
-.va { color: #79c0ff; }
-.ke { color: #e3b341; }
-.st { color: #a5d6ff; }
-.cm { color: #6e7681; font-style: italic; margin-top: 2px; }
+[data-theme='light'] .hero-image-light { display: block; }
+[data-theme='light'] .hero-image-dark { display: none; }
 
 /* Scroll hint */
 .scroll-hint {
@@ -274,20 +239,18 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .hero-container { grid-template-columns: 1fr; gap: var(--spacing-xl); }
-  .hero-terminal-wrap { order: -1; }
-  .terminal { max-width: 400px; }
+  .hero-image-wrap { order: -1; }
+  .hero-image { max-width: 440px; }
 }
 
 @media (max-width: 768px) {
   .hero { min-height: auto; padding: 110px 0 70px; }
   .hero-name { font-size: 2.8rem; }
   .hero-role { font-size: 1.05rem; }
-  .terminal-code { font-size: 0.82rem; padding: 16px 18px; }
 }
 
 @media (max-width: 480px) {
   .hero-name { font-size: 2.2rem; }
   .hero-cta { flex-direction: column; }
-  .terminal { max-width: 100%; }
-  .terminal-code { font-size: 0.78rem; }
+  .hero-image { border-radius: 14px; }
 }
