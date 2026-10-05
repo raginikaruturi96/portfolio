@@ -42,17 +42,18 @@ experience:
         period: Aug 2026 - Present
         current: true
         description:
-          - Developing backend services and APIs using TypeScript.
-          - Implementing business logic and external system integrations.
-          - Working with REST APIs, database operations, and caching solutions.
-          - Collaborating with cross-functional teams to deliver high-quality solutions.
+          - Developed a customer-facing telecom portal that enables business users to manage accounts and contacts, make payments, and view and compare billing invoices, reducing dependency on support agents for routine services.
+          - Developed an integration layer to coordinate multiple backend microservices and expose unified APIs for the portal.
+          - Implemented Role-Based Access Control (RBAC) and integrated Firebase Authentication for secure sign-in and user permission management.
+          - Designed and built features for managing organization accounts, user contacts, and invoice comparisons.
+          - Implemented a caching architecture to improve application response times and reduce redundant backend service calls.
       - title: Software Engineer Intern
         period: Jan 2026 - Jul 2026
         description:
-          - Developed backend services and APIs using TypeScript.
-          - Implemented business logic and external system integrations.
-          - Worked with REST APIs, database operations, and caching solutions.
-          - Collaborated with cross-functional teams to deliver high-quality solutions.
+          - Developed scalable backend services for a customer-facing telecom platform using Node.js and TypeScript.
+          - Worked across 3–4 microservices, understanding their architecture, communication flows, and dependencies while documenting key workflows.
+          - Designed and implemented RESTful APIs with structured error handling and validation.
+          - Developed backend features and integrated APIs to support various functionalities of the platform.
     technologies: [TypeScript, Node.js, GraphQL, Kafka, REST APIs, Firebase, MongoDB, Dynamic 365]
 
   - company: Google
@@ -61,10 +62,11 @@ experience:
       - title: Software Engineer Intern
         period: May 2025 - Aug 2025
         description:
-          - Full-stack development to enhance GPay user experience by enabling immediate feedback for "Business Decline" payment errors.
-          - Implemented Java backend solutions (Frontend, Orchestration layers, proto modifications) and Flutter/Dart client-side UI for server-driven feedback chips.
-          - Worked with internal Google technologies including Protocol Buffers for defining data schemas and event codes.
-          - Aimed to significantly reduce Transaction Attempt Failure Rate (TAFR) and logged feedback data using new proto definitions.
+          - Contributed to GPay's payment experience, enabling immediate user feedback for "Business Decline" errors to help reduce Transaction Attempt Failure Rate (TAFR).
+          - Implemented Java backend services across the orchestration layer along with corresponding client-side UI in Flutter/Dart for server-driven feedback.
+          - Defined Protocol Buffer schemas and event codes for data logging and structured feedback collection.
+          - Evaluated different database technologies and selected an approach tailored to the use case requirements.
+          - Developed and integrated changes across shared components and services within Google's monorepo codebase.
     technologies: [Java, Flutter, Dart, Protobuf]
 
 skills:

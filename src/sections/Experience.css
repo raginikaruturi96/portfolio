@@ -38,7 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 0 4px var(--dark-secondary), 0 0 18px rgba(99, 102, 241, 0.55);
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
   z-index: 2;
   font-size: 14px;
 }
@@ -177,7 +177,7 @@
   height: 9px;
   border-radius: 50%;
   background: var(--primary);
-  box-shadow: 0 0 0 3px var(--dark-secondary);
+  box-shadow: 0 0 6px rgba(99, 102, 241, 0.4);
 }
 
 .role-top {
