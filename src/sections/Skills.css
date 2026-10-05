@@ -158,13 +158,28 @@
 @media (max-width: 768px) {
   .skills-tabs {
     width: 100%;
-    justify-content: flex-start;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    -webkit-overflow-scrolling: touch;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
   }
 
   .skills-tab {
+    width: 100%;
+    min-width: 0;
+    justify-content: flex-start;
+    gap: 0.45rem;
+    padding: 0.6rem;
+    text-align: left;
+  }
+
+  .skills-tab > span:first-of-type {
+    flex: 1;
+    min-width: 0;
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+  .skills-tab-count {
     flex-shrink: 0;
   }
 

@@ -116,6 +116,18 @@
 @media (max-width: 768px) {
   .navbar {
     height: 70px;
+    background: #0f172a;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .navbar.scrolled {
+    background: #0f172a;
+  }
+
+  [data-theme='light'] .navbar,
+  [data-theme='light'] .navbar.scrolled {
+    background: #ffffff;
   }
 
   .navbar-container {
@@ -135,16 +147,25 @@
     right: 0;
     flex-direction: column;
     gap: var(--spacing-md);
-    padding: var(--spacing-lg);
-    background: var(--navbar-scrolled);
+    padding: 0 var(--spacing-lg);
+    background: #0f172a;
     border-bottom: 1px solid rgba(99, 102, 241, 0.2);
     max-height: 0;
     overflow: hidden;
-    transition: max-height var(--transition-normal);
+    visibility: hidden;
+    opacity: 0;
+    transition: max-height var(--transition-normal), padding var(--transition-normal), opacity var(--transition-fast), visibility var(--transition-normal);
   }
 
   .navbar-menu.active {
     max-height: 400px;
+    padding: var(--spacing-lg);
+    visibility: visible;
+    opacity: 1;
+  }
+
+  [data-theme='light'] .navbar-menu {
+    background: #ffffff;
   }
 
   .navbar-link {
