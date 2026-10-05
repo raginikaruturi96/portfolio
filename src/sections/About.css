@@ -245,6 +245,12 @@
   .about-content {
     grid-template-columns: 1fr;
   }
+
+  .about-bubbles {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -257,17 +263,47 @@
   }
 
   .about-bubbles {
-    min-height: 420px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center;
+    align-items: center;
+    gap: 1rem;
+    min-height: 0;
   }
 
   .about-bubble {
-    width: 130px;
-    height: 130px;
+    position: relative;
+    inset: auto;
+    width: min(100%, 132px);
+    height: auto;
+    aspect-ratio: 1;
+    --fx: 5px;
+    --fy: -7px;
+    --frot: 1deg;
   }
 
   .bubble-0 {
-    width: 155px;
-    height: 155px;
+    width: min(100%, 200px);
+    --fx: 7px;
+    --fy: -8px;
+  }
+
+  .bubble-1 {
+    width: min(100%, 100px);
+    --fx: -6px;
+    --fy: -7px;
+  }
+
+  .bubble-2 {
+    width: min(100%, 120px);
+    --fx: 6px;
+    --fy: -5px;
+  }
+
+  .bubble-3 {
+    width: min(100%, 118px);
+    --fx: -5px;
+    --fy: -8px;
   }
 
   .bubble-0 .stat-svg-icon {
@@ -288,6 +324,19 @@
 }
 
 @media (max-width: 480px) {
+  .about-bubbles {
+    gap: 0.75rem;
+  }
+
+  .bubble-0 { width: min(100%, 132px); }
+  .bubble-1 { width: min(100%, 112px); }
+  .bubble-2 { width: min(100%, 122px); }
+  .bubble-3 { width: min(100%, 106px); }
+
+  .about-bubble {
+    font-size: 0.95rem;
+  }
+
   .about-text p {
     font-size: 0.95rem;
   }
