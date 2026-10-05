@@ -31,7 +31,7 @@ hero:
 stats:
   - { label: "WE Scholar",         value: "🎯" }
   - { label: "Codess.cafe Mentee", value: "✨" }
-  - { label: "GDG DSA Co-Lead",    value: "🚀" }
+  - { label: "GDG DSA\nCo‑Lead",   value: "🚀" }
   - { label: "ISTE Coordinator",   value: "🏅" }
 
 experience:

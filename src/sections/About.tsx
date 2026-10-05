@@ -1,7 +1,25 @@
 import { useRef, type MouseEvent } from 'react'
 import { motion } from 'framer-motion'
 import { portfolio } from '../data/portfolio'
+import { WeScholarIcon, CodessCafeIcon, GdgDsaIcon, IsteCoordIcon } from '../components/StatIcons'
 import './About.css'
+
+function renderStatIcon(label: string, fallbackValue: string) {
+  const norm = label.toLowerCase()
+  if (norm.includes('we scholar') || norm.includes('scholar')) {
+    return <WeScholarIcon className="stat-svg-icon" />
+  }
+  if (norm.includes('codess') || norm.includes('mentee')) {
+    return <CodessCafeIcon className="stat-svg-icon" />
+  }
+  if (norm.includes('gdg') || norm.includes('lead') || norm.includes('dsa')) {
+    return <GdgDsaIcon className="stat-svg-icon" />
+  }
+  if (norm.includes('iste') || norm.includes('coordinator')) {
+    return <IsteCoordIcon className="stat-svg-icon" />
+  }
+  return fallbackValue
+}
 
 export default function About() {
   const { stats, aboutParagraphs } = portfolio
@@ -72,7 +90,9 @@ export default function About() {
                 whileHover={{ scale: 1.08 }}
               >
                 <span className="bubble-shine" aria-hidden="true" />
-                <span className="bubble-icon">{stat.value}</span>
+                <span className="bubble-icon">
+                  {renderStatIcon(stat.label, stat.value)}
+                </span>
                 <span className="bubble-label">{stat.label}</span>
               </motion.div>
             ))}
