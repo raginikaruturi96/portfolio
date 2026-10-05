@@ -18,7 +18,7 @@ hero:
   ctaSecondary: { label: "View Projects", href: "#projects" }
   available: "Open to new opportunities"
   snippet:
-    filename: ragini.ts
+    filename: ragini.rs
     name: Ragini Karuturi
     role: Software Engineer
     company: Dhan
@@ -86,7 +86,7 @@ skills:
     - title: Tools & Platforms
       icon: FiTool
       color: primary
-      skills: [Git, GitHub, GitLab, Google Colab, Postman, Bruno, Linux, Protobuf]
+      skills: [Git, GitHub, GitLab, Google Colab, Postman, Bruno, Linux, Protobuf, Firebase]
 
 projects:
   featured:
@@ -152,8 +152,8 @@ contact:
 
 ## About
 
-I am a software engineer who started my career with a passion for solving problems — thinking through different approaches, exploring new technologies, and building interesting things.
+I’m a software engineer who enjoys solving problems and figuring out how things work. I like exploring different approaches, learning new technologies, and turning ideas into things that actually work.
 
-I take ownership of what I build — from the first line of code to the impact it creates — and I hold myself accountable for the quality and outcomes of my work.
+I take ownership of the work I do and like seeing it through from writing the code to understanding how it fits into the bigger picture.
 
-Every project is an opportunity to learn something new, push my limits, and build with intention.
+Every project gives me a chance to learn something new, explore ideas, and grow as an engineer.

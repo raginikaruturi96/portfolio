@@ -105,6 +105,12 @@
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
+[data-theme='light'] .skill-tile {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(99, 102, 241, 0.18);
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.05);
+}
+
 .skill-tile:hover {
   border-color: color-mix(in srgb, var(--tile-color) 60%, transparent);
   box-shadow: 0 12px 30px color-mix(in srgb, var(--tile-color) 25%, transparent);

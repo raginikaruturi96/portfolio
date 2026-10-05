@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FiMail, FiLinkedin, FiGithub, FiCopy, FiCheck, FiArrowUpRight } from 'react-icons/fi'
+import { FiMail, FiLinkedin, FiGithub, FiCopy, FiCheck } from 'react-icons/fi'
 import { portfolio } from '../data/portfolio'
 import './Contact.css'
 
@@ -55,7 +55,6 @@ export default function Contact() {
             <div className="email-chip">
               <FiMail size={20} />
               <span className="email-text">{contact.email}</span>
-              <span className="blink-cursor" aria-hidden="true" />
             </div>
             <button
               type="button"
@@ -72,7 +71,6 @@ export default function Contact() {
             <a href={`mailto:${contact.email}`} className="btn-cta btn-cta-primary">
               <FiMail size={18} />
               Email
-              <FiArrowUpRight size={16} className="arrow" />
             </a>
             <a
               href={linkedinUrl}
@@ -82,7 +80,6 @@ export default function Contact() {
             >
               <FiLinkedin size={18} />
               LinkedIn
-              <FiArrowUpRight size={16} className="arrow" />
             </a>
             <a
               href={githubUrl}
@@ -92,7 +89,6 @@ export default function Contact() {
             >
               <FiGithub size={18} />
               GitHub
-              <FiArrowUpRight size={16} className="arrow" />
             </a>
           </div>
         </motion.div>

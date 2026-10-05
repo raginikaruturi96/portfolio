@@ -265,7 +265,8 @@ main, .footer, .hero {
 
 .card {
   background: var(--card-bg);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   border: 1px solid var(--card-border);
   border-radius: 16px;
   padding: var(--spacing-lg);

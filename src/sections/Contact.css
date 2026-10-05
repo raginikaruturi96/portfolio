@@ -56,11 +56,16 @@
   padding: 0.85rem 1.1rem;
   background: #0b1220;
   border-radius: 12px;
-  color: var(--text);
+  color: #f8fafc;
   font-family: 'JetBrains Mono', var(--font-mono), monospace;
   font-size: 1rem;
   overflow: hidden;
   z-index: 0;
+}
+
+[data-theme='light'] .email-chip {
+  background: #ffffff;
+  color: #0f172a;
 }
 
 .email-chip::before {
@@ -82,6 +87,10 @@
   background: #0b1220;
 }
 
+[data-theme='light'] .email-chip::after {
+  background: #ffffff;
+}
+
 @property --chip-deg {
   syntax: '<angle>';
   initial-value: 0deg;
@@ -94,19 +103,6 @@
 
 .email-chip svg { color: var(--accent); flex-shrink: 0; }
 .email-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
-.blink-cursor {
-  width: 2px;
-  height: 1.1em;
-  background: var(--accent);
-  animation: blink 1s step-end infinite;
-  flex-shrink: 0;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
 
 .copy-btn {
   display: inline-flex;
@@ -121,6 +117,12 @@
   cursor: pointer;
   transition: all 0.2s ease;
   flex-shrink: 0;
+}
+
+[data-theme='light'] .copy-btn {
+  background: #ffffff;
+  border-color: rgba(99, 102, 241, 0.25);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
 }
 
 .copy-btn:hover {
@@ -183,20 +185,12 @@
   left: 130%;
 }
 
-.btn-cta svg:first-child {
+.btn-cta svg {
   transition: transform 0.35s ease;
 }
 
-.btn-cta:hover svg:first-child {
-  transform: rotate(-12deg) scale(1.15);
-}
-
-.btn-cta .arrow {
-  transition: transform 0.2s ease;
-}
-
-.btn-cta:hover .arrow {
-  transform: translate(3px, -3px);
+.btn-cta:hover svg {
+  transform: scale(1.15);
 }
 
 .btn-cta-primary {

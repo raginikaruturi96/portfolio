@@ -1,6 +1,19 @@
 import { motion } from 'framer-motion'
 import { portfolio } from '../data/portfolio'
+import { WeScholarIcon } from '../components/StatIcons'
+import { CmiShortlistIcon } from '../components/AchievementIcons'
 import './Achievements.css'
+
+function renderAchievementIcon(title: string, fallback: string) {
+  const norm = title.toLowerCase()
+  if (norm.includes('we scholar') || norm.includes('scholar') || norm.includes('google')) {
+    return <WeScholarIcon className="achievement-svg-icon" />
+  }
+  if (norm.includes('cmi') || norm.includes('entrance') || norm.includes('shortlist')) {
+    return <CmiShortlistIcon className="achievement-svg-icon" />
+  }
+  return fallback
+}
 
 export default function Achievements() {
   const { achievements } = portfolio
@@ -31,7 +44,9 @@ export default function Achievements() {
               whileHover={{ y: -4 }}
             >
               <div className="achievement-header">
-                <div className="achievement-icon">{a.icon}</div>
+                <div className="achievement-icon">
+                  {renderAchievementIcon(a.title, a.icon)}
+                </div>
                 <h3 className="achievement-title">{a.title}</h3>
               </div>
               <ul className="achievement-details">
