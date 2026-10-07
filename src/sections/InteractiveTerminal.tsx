@@ -194,7 +194,7 @@ export default function InteractiveTerminal() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          onClick={() => inputRef.current?.focus()}
+          onClick={() => inputRef.current?.focus({ preventScroll: true })}
         >
           <div className="iterm-bar">
             <span className="iterm-dot iterm-red" />
@@ -225,7 +225,6 @@ export default function InteractiveTerminal() {
               autoComplete="off"
               spellCheck={false}
               placeholder="type a command..."
-              autoFocus
             />
           </div>
         </motion.div>
