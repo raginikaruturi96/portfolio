@@ -18,7 +18,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p>&copy; {currentYear} {name}. All rights reserved.</p>
-          <p>Designed & Built with <span className="heart">❤️</span> using React, TypeScript & Framer Motion</p>
+          <p>Designed & Built with <span className="heart">❤️</span> using React, TypeScript</p>
         </div>
       </div>
     </footer>
