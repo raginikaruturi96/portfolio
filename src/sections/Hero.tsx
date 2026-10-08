@@ -3,8 +3,8 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { FiArrowDown } from 'react-icons/fi'
 import { useTypewriter } from '../hooks/useTypewriter'
 import { portfolio } from '../data/portfolio'
-import laptopDuck from '../assets/images/laptopDuck.png'
-import elements from '../assets/images/elements.png'
+import laptopDuck from '../assets/images/laptopDuck.webp'
+import elements from '../assets/images/elements.webp'
 import './Hero.css'
 
 const sceneElements = [
@@ -72,7 +72,7 @@ export default function Hero() {
           className="hero-image-wrap"
           initial={reduceMotion ? false : { opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, delay: 0.5, ease: 'easeOut' }}
+          transition={{ duration: 0.45, ease: 'easeOut' }}
         >
           <div className="hero-duck-scene">
             <svg className="hero-orbits" viewBox="0 0 520 520" aria-hidden="true">
@@ -158,6 +158,9 @@ export default function Hero() {
               alt="A developer duck wearing headphones and coding on a laptop"
               width={1254}
               height={1254}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               draggable={false}
             />
             <svg className="hero-orbit-front" viewBox="0 0 520 520" aria-hidden="true">
