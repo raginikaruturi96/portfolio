@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FiBriefcase, FiCalendar, FiMapPin } from 'react-icons/fi'
+import { FiBriefcase, FiCalendar, FiExternalLink, FiMapPin } from 'react-icons/fi'
 import { portfolio } from '../data/portfolio'
 import './Experience.css'
 
@@ -39,6 +39,16 @@ export default function Experience() {
                   <div className="experience-title-block">
                     <h3>
                       <span className="company-name">{exp.company}</span>
+                      <a
+                        className="company-website-link"
+                        href={exp.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visit ${exp.company} website (opens in a new tab)`}
+                        title={`Visit ${exp.company} website`}
+                      >
+                        <FiExternalLink size={15} aria-hidden="true" />
+                      </a>
                     </h3>
                     <div className="experience-meta">
                       <FiMapPin size={14} />

@@ -46,8 +46,8 @@
 .experience-card {
   position: relative;
   background: var(--card-bg);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   border: 1px solid var(--card-border);
   border-radius: 12px;
   padding: 1.5rem 1.75rem;
@@ -93,6 +93,9 @@
 }
 
 .experience-title-block h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
   font-size: 1.15rem;
   margin: 0 0 0.35rem;
   line-height: 1.35;
@@ -109,6 +112,26 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-weight: 700;
+}
+
+.company-website-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  -webkit-text-fill-color: currentColor;
+  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.company-website-link:hover,
+.company-website-link:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--surface-hover);
 }
 
 .experience-meta {
