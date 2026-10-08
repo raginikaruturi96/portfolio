@@ -56,11 +56,13 @@ export default function Navbar({ scrolled, theme, toggleTheme }: NavbarProps) {
           className="navbar-toggle"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
+          aria-expanded={isOpen}
+          aria-controls="navbar-menu"
         >
           {isOpen ? <FiX /> : <FiMenu />}
         </button>
 
-        <div className={`navbar-menu ${isOpen ? 'active' : ''}`}>
+        <div id="navbar-menu" className={`navbar-menu ${isOpen ? 'active' : ''}`}>
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
