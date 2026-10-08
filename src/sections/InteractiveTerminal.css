@@ -46,8 +46,11 @@
 
 .iterm-body {
   padding: 18px 22px 8px;
+  font-family: Consolas, 'Liberation Mono', monospace;
+  font-variant-ligatures: none;
   min-height: 260px;
   max-height: 400px;
+  overflow-x: auto;
   overflow-y: auto;
   font-size: 0.87rem;
   line-height: 1.75;
@@ -67,6 +70,7 @@
 
 .iterm-output {
   display: block !important;
+  white-space: pre;
   color: #a5d6ff;
   padding-left: 12px;
   border-left: 2px solid rgba(99, 102, 241, 0.3);

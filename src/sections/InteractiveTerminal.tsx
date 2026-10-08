@@ -8,7 +8,7 @@ interface TerminalLine {
   content: string | string[]
 }
 
-function buildCommands(): Record<string, () => string | string[]> {
+function buildCommands(): Map<string, () => string | string[]> {
   const { name, hero, experience, projects, skills, education, achievements, contact } = portfolio
   const currentCompany = experience.find(e => e.roles.some(r => r.current)) ?? experience[0]
   const currentRole = currentCompany.roles.find(r => r.current) ?? currentCompany.roles[0]
@@ -58,44 +58,40 @@ function buildCommands(): Record<string, () => string | string[]> {
     `LinkedIn →  ${contact.linkedin}`,
   ]
 
-  return {
-    help: () => [
+  const commandGroups: { aliases: string[]; handler: () => string | string[] }[] = [
+    { aliases: ['name', 'full name', 'your name', 'whoami'], handler: () => name },
+    { aliases: ['position', 'current position', 'role', 'job title', 'current role'], handler: () => currentRole.title },
+    { aliases: ['company', 'employer', 'current company', 'current employer'], handler: () => currentCompany.company },
+    { aliases: ['experience', 'work experience', 'work history', 'employment', 'career'], handler: () => experienceBlock },
+    { aliases: ['projects', 'project', 'my projects'], handler: () => projectsBlock },
+    { aliases: ['skills', 'skill', 'tech stack', 'technologies', 'technical skills'], handler: () => skillsBlock },
+    { aliases: ['education', 'academics', 'academic background', 'qualifications', 'degrees'], handler: () => educationBlock },
+    { aliases: ['contact', 'contact details', 'contact info', 'get in touch', 'reach out'], handler: () => contactBlock },
+    { aliases: ['email', 'email address'], handler: () => contact.email },
+    { aliases: ['linkedin', 'linkedin profile'], handler: () => contact.linkedin },
+    { aliases: ['achievements', 'achievement', 'awards', 'recognition', 'accomplishments'], handler: () => achievementsBlock },
+    { aliases: ['about', 'about me', 'bio', 'biography', 'introduction'], handler: () => [
+      `${name} — ${portfolio.tagline}.`,
+      `Currently at ${currentCompany.company}.`,
+      hero.bio,
+    ] },
+    { aliases: ['help', 'commands', '?'], handler: () => [
       '┌─ Available Commands ──────────────────────────────┐',
       '│  name              → Full name                    │',
       '│  position          → Current job title            │',
       '│  company           → Current employer             │',
       '│  experience        → Work history                 │',
-      '│  projects          → Side projects                │',
+      '│  projects          → Projects                     │',
       '│  skills            → Tech stack                   │',
       '│  education         → Academic background          │',
       '│  contact           → Contact details              │',
       '│  achievements      → Awards & recognition         │',
       '│  clear             → Clear terminal               │',
       '└───────────────────────────────────────────────────┘',
-    ],
-    name: () => name,
-    position: () => currentRole.title,
-    'current position': () => currentRole.title,
-    role: () => currentRole.title,
-    company: () => currentCompany.company,
-    employer: () => currentCompany.company,
-    'current company': () => currentCompany.company,
-    'current employer': () => currentCompany.company,
-    experience: () => experienceBlock,
-    projects: () => projectsBlock,
-    skills: () => skillsBlock,
-    education: () => educationBlock,
-    contact: () => contactBlock,
-    email: () => contact.email,
-    linkedin: () => contact.linkedin,
-    achievements: () => achievementsBlock,
-    whoami: () => 'ragini@portfolio',
-    about: () => [
-      `${name} — ${portfolio.tagline}.`,
-      `Currently at ${currentCompany.company}.`,
-      hero.bio,
-    ],
-  }
+    ] },
+  ]
+
+  return new Map(commandGroups.flatMap(({ aliases, handler }) => aliases.map(alias => [alias, handler] as const)))
 }
 
 const BOOT_LINES: TerminalLine[] = [
@@ -131,7 +127,7 @@ export default function InteractiveTerminal() {
   }, [lines])
 
   const run = (raw: string) => {
-    const cmd = raw.trim().toLowerCase()
+    const cmd = raw.trim().toLowerCase().replace(/\s+/g, ' ')
     const next: TerminalLine[] = [{ type: 'input', content: raw.trim() }]
 
     if (!cmd) {
@@ -144,7 +140,7 @@ export default function InteractiveTerminal() {
       return
     }
 
-    const handler = COMMANDS[cmd]
+    const handler = COMMANDS.get(cmd)
     if (handler) {
       next.push({ type: 'output', content: handler() })
     } else {
