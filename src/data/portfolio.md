@@ -10,7 +10,7 @@ roles:
   - Problem Solver
 
 hero:
-  greeting: "Hello, World!"
+  greeting: "Hey, I'm"
   bio: >-
     I build scalable backend services, APIs, and delightful user interfaces.
     Passionate about Rust, distributed systems, and writing clean code.
@@ -36,6 +36,7 @@ stats:
 
 experience:
   - company: Dhan AI
+    website: https://dhan.ai/
     location: Remote, India
     roles:
       - title: Junior Software Engineer
@@ -57,12 +58,13 @@ experience:
     technologies: [TypeScript, Node.js, GraphQL, Kafka, REST APIs, Firebase, MongoDB, Dynamic 365]
 
   - company: Google
+    website: https://about.google/
     location: Bangalore, India
     roles:
       - title: Software Engineer Intern
         period: May 2025 - Aug 2025
         description:
-          - Contributed to GPay's payment experience, enabling immediate user feedback for "Business Decline" errors to help reduce Transaction Attempt Failure Rate (TAFR).
+          - Contributed to GPay's payment experience by enabling immediate user feedback for "Business Decline" errors, aiming to reduce Transaction Attempt Failure Rate (TAFR) to 5.5%.
           - Implemented Java backend services across the orchestration layer along with corresponding client-side UI in Flutter/Dart for server-driven feedback.
           - Defined Protocol Buffer schemas and event codes for data logging and structured feedback collection.
           - Evaluated different database technologies and selected an approach tailored to the use case requirements.
@@ -118,7 +120,7 @@ education:
     period: 2022 – 2026
     description:
       - "Gained academic knowledge in Software Engineering, **Data Structures & Algorithms**, Database Management Systems (DBMS), **Operating Systems**, Object-Oriented Programming, Computer Networks, and Artificial Intelligence & Machine Learning"
-      - "Attended a 3-week offline bootcamp at IIIT Hyderabad (2023) focusing on **Learn to learn** and programming fundamentals."
+      - "Attended a 3-week offline bootcamp at **IIIT Hyderabad** (2023) focusing on **Learn to learn** and programming fundamentals."
       - "Participated in **Google Immersion Week** 2023, an intensive program covering personal branding, technical interviewing, design thinking, and inclusive leadership."
       - "Competed in Technova 2024, a national-level hackathon, and a college-level GDG hackathon"
       - "Attended a 3-week offline bootcamp at the **TalentSprint**, Hyderabad (2024) learned various web frameworks and programming languages."

@@ -30,6 +30,7 @@ export interface ExperienceRole {
 
 export interface Experience {
   company: string
+  website: string
   location: string
   roles: ExperienceRole[]
   technologies: string[]
