@@ -12,8 +12,8 @@
   border: 1px solid var(--card-border);
   border-left: 3px solid var(--primary);
   background: var(--card-bg);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   border-radius: 0 12px 12px 0;
   overflow: hidden;
 }

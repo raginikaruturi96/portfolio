@@ -201,8 +201,9 @@
 
 .btn-cta-primary:hover {
   color: #fff;
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 14px 34px rgba(245, 243, 244, 0.94);
+  transform: translateY(-2px) scale(1.02);
+  /* box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3); */
+  box-shadow: 0 5px 10px rgba(214, 146, 194, 0.94);
 }
 
 .btn-cta-secondary {

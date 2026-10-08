@@ -2,51 +2,56 @@ import { useEffect, useRef } from 'react'
 import './CustomCursor.css'
 
 export default function CustomCursor() {
-  const dotRef = useRef<HTMLDivElement>(null)
-  const ringRef = useRef<HTMLDivElement>(null)
-  const mouse = useRef({ x: 0, y: 0 })
-  const ring = useRef({ x: 0, y: 0 })
+  const cursorRef = useRef<SVGSVGElement>(null)
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
-      mouse.current = { x: e.clientX, y: e.clientY }
-      if (dotRef.current) {
-        dotRef.current.style.left = `${e.clientX}px`
-        dotRef.current.style.top = `${e.clientY}px`
-      }
+      if (!cursorRef.current) return
+      cursorRef.current.style.left = `${e.clientX}px`
+      cursorRef.current.style.top = `${e.clientY}px`
+      cursorRef.current.classList.add('visible')
     }
 
-    let rafId: number
-    const animate = () => {
-      ring.current.x += (mouse.current.x - ring.current.x) * 0.13
-      ring.current.y += (mouse.current.y - ring.current.y) * 0.13
-      if (ringRef.current) {
-        ringRef.current.style.left = `${ring.current.x}px`
-        ringRef.current.style.top = `${ring.current.y}px`
+    const onLeave = () => cursorRef.current?.classList.remove('visible')
+    const onOver = (event: MouseEvent) => {
+      const target = event.target
+      if (target instanceof Element && target.closest('a, button')) {
+        cursorRef.current?.classList.add('hovering')
       }
-      rafId = requestAnimationFrame(animate)
     }
-
-    const expand = () => ringRef.current?.classList.add('expanded')
-    const shrink = () => ringRef.current?.classList.remove('expanded')
+    const onOut = (event: MouseEvent) => {
+      const target = event.target
+      const relatedTarget = event.relatedTarget
+      if (
+        target instanceof Element &&
+        target.closest('a, button') &&
+        (!(relatedTarget instanceof Element) || !relatedTarget.closest('a, button'))
+      ) {
+        cursorRef.current?.classList.remove('hovering')
+      }
+    }
 
     document.addEventListener('mousemove', onMove)
-    rafId = requestAnimationFrame(animate)
-    document.querySelectorAll('a, button').forEach(el => {
-      el.addEventListener('mouseenter', expand)
-      el.addEventListener('mouseleave', shrink)
-    })
+    document.addEventListener('mouseleave', onLeave)
+    document.addEventListener('mouseover', onOver)
+    document.addEventListener('mouseout', onOut)
 
     return () => {
       document.removeEventListener('mousemove', onMove)
-      cancelAnimationFrame(rafId)
+      document.removeEventListener('mouseleave', onLeave)
+      document.removeEventListener('mouseover', onOver)
+      document.removeEventListener('mouseout', onOut)
     }
   }, [])
 
   return (
-    <>
-      <div ref={dotRef} className="cursor-dot" />
-      <div ref={ringRef} className="cursor-ring" />
-    </>
+    <svg
+      ref={cursorRef}
+      className="cursor-pointer"
+      viewBox="0 0 140 170"
+      aria-hidden="true"
+    >
+      <path d="M6 6 136 91 82 96 31 163Z" />
+    </svg>
   )
 }

@@ -8,7 +8,7 @@ const PARTICLES = Array.from({ length: 80 }, (_, i) => ({
   size: 4 + (i % 6) * 2,
   duration: 14 + (i % 10) * 2,
   delay: -((i * 1.3) % 20),
-  parallax: 10 + (i % 5) * 8,
+  parallax: 60 + (i % 5) * 40,
   drift: (i % 7) - 3,
 }))
 
