@@ -45,9 +45,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
   margin-bottom: var(--spacing-xs);
   padding-bottom: var(--spacing-xs);
   border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.project-repo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  color: var(--text-muted);
+  border-radius: 4px;
+  transition: color var(--transition-normal);
+}
+
+.project-repo-link:hover,
+.project-repo-link:focus-visible {
+  color: var(--primary);
+}
+
+.project-repo-link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 .project-header h3 {

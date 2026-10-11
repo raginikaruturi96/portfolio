@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { FiGitlab } from 'react-icons/fi'
 import { portfolio } from '../data/portfolio'
 import './Projects.css'
 
@@ -31,6 +32,18 @@ export default function Projects() {
             >
               <div className="project-header">
                 <h3>{project.title}</h3>
+                {project.gitlab && (
+                  <a
+                    href={project.gitlab}
+                    className="project-repo-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${project.title} on GitLab`}
+                    title="GitLab"
+                  >
+                    <FiGitlab size={22} aria-hidden="true" />
+                  </a>
+                )}
               </div>
 
               <ul className="project-description">
