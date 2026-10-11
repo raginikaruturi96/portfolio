@@ -1,6 +1,6 @@
 import { useId } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
-import { FiArrowDown } from 'react-icons/fi'
+import { FiArrowDown, FiMail, FiLinkedin } from 'react-icons/fi'
 import { useTypewriter } from '../hooks/useTypewriter'
 import { portfolio } from '../data/portfolio'
 import laptopDuck from '../assets/images/laptopDuck.webp'
@@ -30,7 +30,8 @@ export default function Hero() {
   const reduceMotion = useReducedMotion()
   const orbitGradient = useId()
   const platformId = useId()
-  const { name, hero } = portfolio
+  const { name, hero, contact } = portfolio
+  const linkedin = contact.linkedin.startsWith('https://') ? contact.linkedin : `https://${contact.linkedin}`
 
   return (
     <section id="hero" className="hero">
@@ -62,8 +63,15 @@ export default function Hero() {
           </motion.p>
 
           <motion.div variants={itemVariants} className="hero-cta">
-            <a href={hero.ctaPrimary.href} className="btn btn-primary">{hero.ctaPrimary.label}</a>
+            <a href={hero.ctaPrimary.href} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              {hero.ctaPrimary.label}
+            </a>
             <a href={hero.ctaSecondary.href} className="btn btn-secondary">{hero.ctaSecondary.label}</a>
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="hero-contact">
+            <a href={`mailto:${contact.email}`}><FiMail aria-hidden="true" />Email</a>
+            <a href={linkedin} target="_blank" rel="noopener noreferrer"><FiLinkedin aria-hidden="true" />LinkedIn</a>
           </motion.div>
 
         </motion.div>

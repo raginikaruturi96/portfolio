@@ -14,7 +14,7 @@ hero:
   greeting: "Hey, I'm"
   summary: Junior Software Engineer at Dhan AI and former Google GPay intern.
   bio: "Software engineer who enjoys solving problems, exploring ideas, and building backend systems that work."
-  ctaPrimary: { label: "Let's Connect", href: "#contact" }
+  ctaPrimary: { label: "Resume", href: "/assets/RagniKaruturiResume.pdf" }
   ctaSecondary: { label: "Projects", href: "#projects" }
   available: "Open to new opportunities"
   snippet:
