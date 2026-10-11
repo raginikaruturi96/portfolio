@@ -27,19 +27,21 @@
 }
 
 .navbar-brand {
-  font-size: 2rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  flex-shrink: 0;
   text-decoration: none;
   transition: filter 0.25s ease;
 }
 
-.navbar-brand h3 {
-  margin: 0;
-  font-size: inherit;
+.navbar-brand-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .navbar-brand:hover,
