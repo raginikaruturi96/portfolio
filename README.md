@@ -99,12 +99,24 @@ Edit the CSS variables in `src/styles/index.css`:
 ```
 
 ### Content
-Update the content in individual section files:
-- `src/sections/About.tsx` - About section
-- `src/sections/Skills.tsx` - Skills and technologies
-- `src/sections/Experience.tsx` - Work experience
-- `src/sections/Projects.tsx` - Projects showcase
-- `src/sections/Contact.tsx` - Contact information
+Edit [src/data/portfolio.md](src/data/portfolio.md) for the hero summary, experience,
+projects, skills, education, achievements, and contact details. This data powers
+both the interactive React app and the generated static portfolio.
+
+### Initial HTML & SEO
+The Vite HTML plugin renders [src/StaticPortfolio.tsx](src/StaticPortfolio.tsx) into
+the root element at build time. The generated HTML includes semantic sections,
+resume details, and contact links before JavaScript runs. React takes over on
+JavaScript-enabled visits; no server-side React runtime is required.
+
+The same data generates Schema.org JSON-LD for a `ProfilePage`, `Person`, and the
+featured software projects. Edit [index.html](index.html) for page and social
+metadata. Keep the canonical URL and social-image URLs there consistent with
+`siteUrl` in [vite.config.ts](vite.config.ts).
+
+After `npm run build`, inspect the generated HTML in `dist` and use
+`npm run preview` to check it with JavaScript disabled. Deploy the generated
+`dist` directory, not the source HTML template, to publish these changes.
 
 ### Images & Assets
 Place images in the `public/` directory and reference them in components.
