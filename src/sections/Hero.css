@@ -195,8 +195,10 @@
 .hero-contact a {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  min-height: 44px;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
   color: var(--text-muted);
 }
 
