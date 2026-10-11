@@ -1,6 +1,6 @@
 import { useId } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
-import { FiArrowDown, FiMail, FiLinkedin } from 'react-icons/fi'
+import { FiArrowDown, FiMail, FiLinkedin, FiGithub, FiGitlab } from 'react-icons/fi'
 import { useTypewriter } from '../hooks/useTypewriter'
 import { portfolio } from '../data/portfolio'
 import laptopDuck from '../assets/images/laptopDuck.webp'
@@ -32,6 +32,8 @@ export default function Hero() {
   const platformId = useId()
   const { name, hero, contact } = portfolio
   const linkedin = contact.linkedin.startsWith('https://') ? contact.linkedin : `https://${contact.linkedin}`
+  const github = contact.github.startsWith('https://') ? contact.github : `https://${contact.github}`
+  const gitlab = portfolio.projects.featured.find(project => project.gitlab)?.gitlab
 
   return (
     <section id="hero" className="hero">
@@ -70,8 +72,10 @@ export default function Hero() {
           </motion.div>
 
           <motion.div variants={itemVariants} className="hero-contact">
-            <a href={`mailto:${contact.email}`}><FiMail aria-hidden="true" />Email</a>
-            <a href={linkedin} target="_blank" rel="noopener noreferrer"><FiLinkedin aria-hidden="true" />LinkedIn</a>
+            <a href={github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><FiGithub aria-hidden="true" /></a>
+            {gitlab && <a href={gitlab} target="_blank" rel="noopener noreferrer" aria-label="GitLab" title="GitLab"><FiGitlab aria-hidden="true" /></a>}
+            <a href={linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><FiLinkedin aria-hidden="true" /></a>
+            <a href={`mailto:${contact.email}`} aria-label="Email" title="Email"><FiMail aria-hidden="true" /></a>
           </motion.div>
 
         </motion.div>

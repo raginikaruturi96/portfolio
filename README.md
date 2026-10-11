@@ -162,7 +162,7 @@ Contributions are welcome! Feel free to submit issues and pull requests.
 
 **Ragini Karuturi**
 - 🌐 Website: [your-domain.com](https://your-domain.com)
-- 💼 LinkedIn: [linkedin.com/in/ragini-karuturi-514b80256](https://linkedin.com/in/ragini-karuturi-514b80256)
+- 💼 LinkedIn: [linkedin.com/in/raginikaruturi](https://linkedin.com/in/raginikaruturi)
 - 🐙 GitHub: [github.com/raginikaruturi](https://github.com/raginikaruturi)
 - 📧 Email: raginikaruturi@gmail.com
 

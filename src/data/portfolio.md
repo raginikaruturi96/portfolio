@@ -150,7 +150,7 @@ contact:
     I'm always open to new opportunities and interesting projects. Whether you want to discuss a
     collaboration, have a question, or just want to connect — feel free to reach out!
   email: raginikaruturi@gmail.com
-  linkedin: linkedin.com/in/ragini-karuturi-514b80256
+  linkedin: linkedin.com/in/raginikaruturi
   github: github.com/raginikaruturi96
 ---
 
