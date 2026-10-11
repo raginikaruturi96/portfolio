@@ -6,16 +6,16 @@ roles:
   - Full Stack Engineer
   - Backend Developer
   - Google WE Scholar
+  - Codess.cafe Mentee
   - Rustacean
   - Problem Solver
 
 hero:
   greeting: "Hey, I'm"
-  bio: >-
-    I build scalable backend services, APIs, and delightful user interfaces.
-    Passionate about Rust, distributed systems, and writing clean code.
+  summary: Junior Software Engineer at Dhan AI and former Google GPay intern.
+  bio: "Software engineer who enjoys solving problems, exploring ideas, and building backend systems that work."
   ctaPrimary: { label: "Let's Connect", href: "#contact" }
-  ctaSecondary: { label: "View Projects", href: "#projects" }
+  ctaSecondary: { label: "Projects", href: "#projects" }
   available: "Open to new opportunities"
   snippet:
     filename: ragini.rs
@@ -101,6 +101,7 @@ projects:
       technologies: [Rust, File Systems, Data Structures, CLI]
       features: [Initialize repositories, Track file changes, Commit management, Revision history]
       github: "#"
+      gitlab: https://gitlab.com/Ragini695
 
     - title: Eventure
       description:
@@ -111,6 +112,7 @@ projects:
       technologies: [Elixir, Phoenix Framework, LiveView, PostgreSQL]
       features: [Event creation, Seat reservations, Real-time chat, User roles]
       github: "#"
+      gitlab: https://gitlab.com/Ragini695
 
 
 education:
@@ -153,9 +155,9 @@ contact:
 ---
 
 ## About
+I'm a software engineer who enjoys breaking down problems, exploring different approaches, and finding the right solution for each use case. I'm curious about the trade-offs behind technical decisions and how individual pieces of code fit into the larger system.
 
-I’m a software engineer who enjoys solving problems and figuring out how things work. I like exploring different approaches, learning new technologies, and turning ideas into things that actually work.
+I currently work as a Software Engineer at Dhan AI, having previously interned at Google. These experiences have helped me understand the engineering process beyond coding, from planning and documenting ideas to iterating on designs and building reliable solutions.
 
-I take ownership of the work I do and like seeing it through from writing the code to understanding how it fits into the bigger picture.
+I see every project as an opportunity to learn, challenge my thinking, and become a better engineer.
 
-Every project gives me a chance to learn something new, explore ideas, and grow as an engineer.
