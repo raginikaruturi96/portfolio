@@ -1,5 +1,13 @@
 import type { PortfolioData } from './types/portfolio'
 
+function renderWithBold(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, index) =>
+    part.startsWith('**') && part.endsWith('**')
+      ? <strong className="about-emphasis" key={index}>{part.slice(2, -2)}</strong>
+      : part,
+  )
+}
+
 export default function StaticPortfolio({ data, imageSrc }: { data: PortfolioData; imageSrc: string }) {
   const { name, hero, experience, projects, skills, contact } = data
   const currentCompany = experience.find(company => company.roles.some(role => role.current))
@@ -27,7 +35,7 @@ export default function StaticPortfolio({ data, imageSrc }: { data: PortfolioDat
 
       <section id="about">
         <h2>About {name}</h2>
-        {data.aboutParagraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+        {data.aboutParagraphs.map(paragraph => <p key={paragraph}>{renderWithBold(paragraph)}</p>)}
       </section>
 
       <section id="experience">
