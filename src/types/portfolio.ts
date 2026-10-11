@@ -12,6 +12,7 @@ export interface HeroSnippet {
 
 export interface Hero {
   greeting: string
+  summary: string
   bio: string
   ctaPrimary: CtaLink
   ctaSecondary: CtaLink
@@ -42,6 +43,7 @@ export interface FeaturedProject {
   technologies: string[]
   features: string[]
   github: string
+  gitlab?: string
   demo: string
 }
 
