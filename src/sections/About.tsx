@@ -4,6 +4,14 @@ import { portfolio } from '../data/portfolio'
 import { WeScholarIcon, CodessCafeIcon, GdgDsaIcon, IsteCoordIcon } from '../components/StatIcons'
 import './About.css'
 
+function renderWithBold(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, index) =>
+    part.startsWith('**') && part.endsWith('**')
+      ? <strong className="about-emphasis" key={index}>{part.slice(2, -2)}</strong>
+      : part,
+  )
+}
+
 function renderStatIcon(label: string, fallbackValue: string) {
   const norm = label.toLowerCase()
   if (norm.includes('we scholar') || norm.includes('scholar')) {
@@ -65,7 +73,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             {aboutParagraphs.map((p, i) => (
-              <p key={i}>{p}</p>
+              <p key={i}>{renderWithBold(p)}</p>
             ))}
           </motion.div>
 

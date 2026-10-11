@@ -155,9 +155,9 @@ contact:
 ---
 
 ## About
-I'm a software engineer who enjoys breaking down problems, exploring different approaches, and finding the right solution for each use case. I'm curious about the trade-offs behind technical decisions and how individual pieces of code fit into the larger system.
+I'm a software engineer who enjoys **breaking down problems**, exploring different approaches, and finding the right solution for each use case. I'm curious about the **trade-offs behind technical decisions** and how individual pieces of code fit into the **larger system**.
 
-I currently work as a Software Engineer at Dhan AI, having previously interned at Google. These experiences have helped me understand the engineering process beyond coding, from planning and documenting ideas to iterating on designs and building reliable solutions.
+I currently work as a Software Engineer at **Dhan AI**, having previously interned at **Google**. These experiences have helped me understand the engineering process beyond coding, from planning and documenting ideas to iterating on designs and **building reliable solutions**.
 
-I see every project as an opportunity to learn, challenge my thinking, and become a better engineer.
+I see every project as an opportunity to learn, **challenge my thinking**, and become a better engineer.
 
