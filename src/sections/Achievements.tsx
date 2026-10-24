@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { portfolio } from '../data/portfolio'
-import { WeScholarIcon } from '../components/StatIcons'
-import { CmiShortlistIcon } from '../components/AchievementIcons'
+import { WeScholarIcon } from '../components/icons/StatIcons'
+import { CmiShortlistIcon } from '../components/icons/AchievementIcons'
 import './Achievements.css'
 
 function renderAchievementIcon(title: string, fallback: string) {
