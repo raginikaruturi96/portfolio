@@ -17,16 +17,6 @@ hero:
   ctaPrimary: { label: "Resume", href: "/assets/RagniKaruturiResume.pdf" }
   ctaSecondary: { label: "Projects", href: "#projects" }
   available: "Open to new opportunities"
-  snippet:
-    filename: ragini.rs
-    name: Ragini Karuturi
-    role: Software Engineer
-    company: Dhan
-    languages: [Rust, Elixir, TypeScript, Go, Java, Python]
-    loves: Building cool things
-    comments:
-      - "Google WE Scholar"
-      - "Codess.cafe Mentee"
 
 stats:
   - { label: "WE Scholar",         value: "🎯" }

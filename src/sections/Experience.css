@@ -143,16 +143,6 @@
   font-size: 0.85rem;
 }
 
-.experience-meta .meta-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.meta-dot {
-  opacity: 0.5;
-}
-
 .badge-current {
   padding: 0.25rem 0.7rem;
   background: linear-gradient(135deg, var(--success), rgba(16, 185, 129, 0.7));

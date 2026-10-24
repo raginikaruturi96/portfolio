@@ -1,15 +1,5 @@
 export interface CtaLink { label: string; href: string }
 
-export interface HeroSnippet {
-  filename: string
-  name: string
-  role: string
-  company: string
-  languages: string[]
-  loves: string
-  comments: string[]
-}
-
 export interface Hero {
   greeting: string
   summary: string
@@ -17,7 +7,6 @@ export interface Hero {
   ctaPrimary: CtaLink
   ctaSecondary: CtaLink
   available: string
-  snippet: HeroSnippet
 }
 
 export interface Stat { label: string; value: string }
@@ -44,7 +33,6 @@ export interface FeaturedProject {
   features: string[]
   github: string
   gitlab?: string
-  demo: string
 }
 
 export type SkillIcon = 'FiCode' | 'FiDatabase' | 'FiTool' | 'FiLayers'

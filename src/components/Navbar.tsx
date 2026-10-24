@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { FiMenu, FiX, FiSun, FiMoon } from 'react-icons/fi'
-import favicon from '../assets/images/favicon.png'
 import './Navbar.css'
 
 interface NavbarProps {
@@ -50,7 +49,7 @@ export default function Navbar({ scrolled, theme, toggleTheme }: NavbarProps) {
           onClick={() => setIsOpen(false)}
           aria-current={activeId === 'hero' ? 'page' : undefined}
         >
-          <img className="navbar-brand-icon" src={favicon} alt="Ragini Karuturi home" />
+          <img className="navbar-brand-icon" src="/favicon.png" alt="Ragini Karuturi home" />
         </a>
 
         <button

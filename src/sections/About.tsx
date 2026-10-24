@@ -1,7 +1,7 @@
 import { useRef, type MouseEvent } from 'react'
 import { motion } from 'framer-motion'
 import { portfolio } from '../data/portfolio'
-import { WeScholarIcon, CodessCafeIcon, GdgDsaIcon, IsteCoordIcon } from '../components/StatIcons'
+import { WeScholarIcon, CodessCafeIcon, GdgDsaIcon, IsteCoordIcon } from '../components/icons/StatIcons'
 import './About.css'
 
 function renderWithBold(text: string) {

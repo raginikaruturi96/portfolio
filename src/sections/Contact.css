@@ -16,11 +16,6 @@
   letter-spacing: -0.01em;
 }
 
-.contact-heading .prompt {
-  color: var(--accent);
-  font-weight: 700;
-}
-
 .contact-heading .cmd {
   color: var(--text);
 }

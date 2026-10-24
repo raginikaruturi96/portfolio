@@ -21,43 +21,6 @@
   background-image: radial-gradient(rgba(79, 70, 229, 0.18) 1px, transparent 1px);
 }
 
-/* Floating particles */
-.hero-particles {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  --mx: 0;
-  --my: 0;
-}
-
-.particle {
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.95), rgba(129, 140, 248, 0.7) 55%, transparent 78%);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 0 10px rgba(129, 140, 248, 0.55), inset 0 0 4px rgba(255, 255, 255, 0.4);
-  opacity: 0;
-  animation: particle-rise linear infinite;
-  will-change: transform, opacity;
-  transition: translate 0.5s ease-out;
-  translate: calc(var(--mx) * var(--parallax, 14px) * -1) calc(var(--my) * var(--parallax, 14px) * -1);
-}
-
-[data-theme='light'] .particle {
-  background: radial-gradient(circle at 30% 30%, rgba(79, 70, 229, 0.9), rgba(219, 39, 119, 0.55) 55%, transparent 78%);
-  border-color: rgba(79, 70, 229, 0.35);
-  box-shadow: 0 0 12px rgba(79, 70, 229, 0.55), inset 0 0 4px rgba(255, 255, 255, 0.5);
-}
-
-@keyframes particle-rise {
-  0%   { opacity: 0; transform: translateY(0) translateX(0) scale(0.4); }
-  10%  { opacity: 0.9; }
-  50%  { transform: translateY(-100px) translateX(calc(var(--drift, 0) * 3px)) scale(1); }
-  90%  { opacity: 0.5; }
-  100% { opacity: 0; transform: translateY(-220px) translateX(calc(var(--drift, 0) * -3px)) scale(1.6); }
-}
-
 /* Layout */
 .hero-container {
   display: grid;
